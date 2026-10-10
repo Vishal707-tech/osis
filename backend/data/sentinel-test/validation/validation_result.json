@@ -1,0 +1,86 @@
+{
+  "testName": "Sentinel-1 Baseline Dark-Slick Validation against DARTIS_2019",
+  "timestamp": "2026-09-07T13:01:27.809Z",
+  "dataset": "DARTIS_2019 (ESSD 2025 / PANGAEA 10.1594/PANGAEA.980773)",
+  "patch": {
+    "tag": "ow-0002-01-000002",
+    "patchName": "S1_20190104_155638_155818_VV_2",
+    "sceneId": "S1A_IW_GRDH_1SDV_20190104T155703_20190104T155728_025330_02CD9D_42AF_COG.SAFE",
+    "acquisitionTime": "2019-01-04T15:56:38Z",
+    "polarization": "VV (+ VH cross-pol)",
+    "jpegPatchPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\ow-0002.jpg",
+    "xmlAnnotationPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\ow-0002.xml"
+  },
+  "groundTruth": {
+    "format": "Pascal VOC XML",
+    "className": "oil",
+    "patchBoundingBox": [
+      309,
+      282,
+      340,
+      342
+    ],
+    "patchCentroid": {
+      "x": 324.5,
+      "y": 312
+    },
+    "patchBoxArea": 1860,
+    "geoCentroid": {
+      "lon": 32.028959101610354,
+      "lat": 31.685444635125975
+    },
+    "geoBoundingBox": [
+      32.02683140169482,
+      31.679563403726075,
+      32.03108680129883,
+      31.69132586629883
+    ],
+    "cdseRasterBbox": [
+      253,
+      237,
+      267,
+      282
+    ],
+    "cdseRasterCentroid": {
+      "x": 260.26,
+      "y": 259.5
+    }
+  },
+  "detectorConfiguration": {
+    "windowRadiusPx": 25,
+    "kSigma": 2,
+    "minDampingDb": 3.5,
+    "minCandidatePixels": 10,
+    "oceanMaskCriteria": {
+      "maxVhDb": -20,
+      "maxVvDb": -10
+    }
+  },
+  "detectionResults": {
+    "totalCandidatesProduced": 0,
+    "candidates": []
+  },
+  "validationEvaluation": {
+    "hasGroundTruthOverlap": false,
+    "overlappingCandidateId": null,
+    "bestIoU": 0,
+    "candidateBoundingBoxPatch": null,
+    "candidatePixelAreaCdse": null,
+    "candidateBoxAreaPatch": null,
+    "groundTruthBoxAreaPatch": 1860,
+    "intersectionAreaPatch": 0,
+    "candidateCentroidPatch": null,
+    "groundTruthCentroidPatch": {
+      "x": 324.5,
+      "y": 312
+    },
+    "centroidDistancePatchPx": null,
+    "classificationResult": "MISSED DETECTION"
+  },
+  "artifacts": {
+    "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\validation_overlay.png",
+    "resultJson": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\validation_result.json",
+    "calibratedVvDbTif": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\s1a_20190104_vv_db.tif",
+    "calibratedVhDbTif": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\s1a_20190104_vh_db.tif"
+  }
+}

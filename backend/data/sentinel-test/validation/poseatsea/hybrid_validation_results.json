@@ -1,0 +1,2334 @@
+{
+  "experiment": "O.S.I.S. Hybrid SAR Spill-Detection Pipeline Validation",
+  "timestamp": "2026-09-07T18:36:10Z",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "cuda": true
+  },
+  "fusionConfig": {
+    "version": "1.0.0-prototype",
+    "description": "Multi-source evidence fusion parameters for O.S.I.S. Hybrid SAR Spill Detector",
+    "classical": {
+      "windowRadius": 25,
+      "kSigma": 2.0,
+      "minDampingDb": 3.5,
+      "closingKernel": [
+        3,
+        3
+      ],
+      "minCandidatePixels": 10,
+      "candidateThresholdScore": 0.5
+    },
+    "poseatsea": {
+      "architecture": "U-Net + MiT-B2",
+      "checkpoint": "best_sar_model.pth",
+      "numClasses": 5,
+      "classNames": [
+        "Sea Surface",
+        "Oil Spill",
+        "Look-alike",
+        "Ship",
+        "Land"
+      ],
+      "inputChannels": [
+        "VV_norm",
+        "VH_norm",
+        "(VV-VH)_norm"
+      ],
+      "percentileLow": 2.0,
+      "percentileHigh": 98.0
+    },
+    "fusionWeights": {
+      "openWaterDualConfirmed": {
+        "wClassical": 0.45,
+        "wPoseOil": 0.45,
+        "wDampingBonus": 0.1,
+        "wLookalikePenalty": 0.05,
+        "minDampingNormMax": 6.0
+      },
+      "openWaterUnconfirmed": {
+        "suppressionFactor": 0.2
+      },
+      "coastal": {
+        "coastalProximityRadiusPx": 60.0,
+        "coastalProximityThreshold": 0.1,
+        "lookalikeSuppressionDamping": 1.0,
+        "wClassicalPersistence": 1.0,
+        "wLookalikePenaltyBase": 0.15,
+        "wPoseOilBonus": 0.15,
+        "wCoastalPersistenceBonus": 0.05
+      },
+      "spatialMerging": {
+        "maxClusterDistancePx": 30.0,
+        "includeIntersectingDlOil": true,
+        "contourSimplifyEpsilon": 0.01
+      },
+      "landArtifactFilter": {
+        "maxLandOverlapAllowed": 0.4
+      },
+      "decisionThreshold": 0.5
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "ow-0002",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "spillDetected": true,
+      "finalSpillCount": 2,
+      "topConfidence": 0.856,
+      "overlapsGt": true,
+      "bestCandidateBboxIoU": 0.0313,
+      "bestCandidateCentroidDistPx": 14.92,
+      "bestMergedSpillBboxIoU": 0.0313,
+      "bestMergedSpillCentroidDistPx": 13.66,
+      "bestBboxIoU": 0.0313,
+      "bestCentroidDistPx": 13.66,
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 59.99,
+        "poseatseaTimeMs": 307.44,
+        "fusionTimeMs": 15.36,
+        "totalTimeMs": 382.79
+      },
+      "comparison": {
+        "classicalRetained": 20,
+        "poseatseaOilPixels": 236,
+        "poseatseaLookalikePixels": 0,
+        "poseatseaLandPixels": 0,
+        "hybridRetainedCandidates": 2,
+        "hybridSpillObjects": 2
+      },
+      "spillObjects": [
+        {
+          "spillDetected": true,
+          "confidence": 0.856,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  31.98779,
+                  31.725392
+                ],
+                [
+                  31.98779,
+                  31.724864
+                ],
+                [
+                  31.988403,
+                  31.724601
+                ],
+                [
+                  31.98871,
+                  31.722755
+                ],
+                [
+                  31.989323,
+                  31.722491
+                ],
+                [
+                  31.98963,
+                  31.724864
+                ],
+                [
+                  31.989017,
+                  31.725392
+                ],
+                [
+                  31.988097,
+                  31.724864
+                ],
+                [
+                  31.98779,
+                  31.725392
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 31.724033,
+            "lon": 31.988965
+          },
+          "areaKm2": 0.04505,
+          "evidence": {
+            "classicalScore": 0.843,
+            "poseatseaOilProbability": 0.653,
+            "poseatseaLookalikeProbability": 0.038,
+            "vvDampingDb": 6.13,
+            "vvVhDifferenceDb": 8.29,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            126,
+            108,
+            133,
+            120
+          ],
+          "pixelCount": 53,
+          "associatedCandidateIds": [
+            718
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.789,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.02612,
+                  31.689005
+                ],
+                [
+                  32.026427,
+                  31.688478
+                ],
+                [
+                  32.026733,
+                  31.689269
+                ],
+                [
+                  32.027347,
+                  31.689269
+                ],
+                [
+                  32.027653,
+                  31.688741
+                ],
+                [
+                  32.02796,
+                  31.689005
+                ],
+                [
+                  32.02612,
+                  31.689005
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 31.689027,
+            "lon": 32.026989
+          },
+          "areaKm2": 0.0102,
+          "evidence": {
+            "classicalScore": 0.827,
+            "poseatseaOilProbability": 0.205,
+            "poseatseaLookalikeProbability": 0.115,
+            "vvDampingDb": 8.45,
+            "vvVhDifferenceDb": -0.79,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            251,
+            245,
+            258,
+            249
+          ],
+          "pixelCount": 12,
+          "associatedCandidateIds": [
+            1684
+          ]
+        }
+      ],
+      "retainedCandidates": [
+        {
+          "clusterId": 718,
+          "area": 17,
+          "bbox": [
+            126,
+            108,
+            132,
+            118
+          ],
+          "centroid": [
+            129.24,
+            112.41
+          ],
+          "fusedScore": 0.8561,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.84) + POSEatSea oil (0.84, 49 nearby px).",
+          "evidence": {
+            "classicalScore": 0.843,
+            "poseatseaOilProbability": 0.6253,
+            "poseatseaMaxOilLocal": 0.8412,
+            "poseatseaLookalikeProbability": 0.0318,
+            "oilOverlapRatio": 0.765,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.13,
+            "vvVhDifferenceDb": 8.29,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1684,
+          "area": 12,
+          "bbox": [
+            251,
+            245,
+            258,
+            249
+          ],
+          "centroid": [
+            253.83,
+            245.92
+          ],
+          "fusedScore": 0.7894,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.83) + POSEatSea oil (0.72, 133 nearby px).",
+          "evidence": {
+            "classicalScore": 0.827,
+            "poseatseaOilProbability": 0.2047,
+            "poseatseaMaxOilLocal": 0.7182,
+            "poseatseaLookalikeProbability": 0.1149,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.45,
+            "vvVhDifferenceDb": -0.79,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        }
+      ],
+      "gtBoundingBoxes": [
+        [
+          253,
+          237,
+          267,
+          282
+        ]
+      ]
+    },
+    {
+      "sceneId": "ow-0004",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "spillDetected": true,
+      "finalSpillCount": 3,
+      "topConfidence": 0.962,
+      "overlapsGt": true,
+      "bestCandidateBboxIoU": 0.4045,
+      "bestCandidateCentroidDistPx": 2.7,
+      "bestMergedSpillBboxIoU": 0.0108,
+      "bestMergedSpillCentroidDistPx": 10.5,
+      "bestBboxIoU": 0.4045,
+      "bestCentroidDistPx": 2.7,
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 59.16,
+        "poseatseaTimeMs": 70.74,
+        "fusionTimeMs": 20.17,
+        "totalTimeMs": 150.07
+      },
+      "comparison": {
+        "classicalRetained": 21,
+        "poseatseaOilPixels": 1779,
+        "poseatseaLookalikePixels": 31,
+        "poseatseaLandPixels": 0,
+        "hybridRetainedCandidates": 5,
+        "hybridSpillObjects": 3
+      },
+      "spillObjects": [
+        {
+          "spillDetected": true,
+          "confidence": 0.962,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  31.168241,
+                  31.726343
+                ],
+                [
+                  31.174987,
+                  31.717114
+                ],
+                [
+                  31.174987,
+                  31.714478
+                ],
+                [
+                  31.17744,
+                  31.712896
+                ],
+                [
+                  31.179587,
+                  31.71395
+                ],
+                [
+                  31.183573,
+                  31.710259
+                ],
+                [
+                  31.186026,
+                  31.710786
+                ],
+                [
+                  31.190626,
+                  31.709204
+                ],
+                [
+                  31.194612,
+                  31.704722
+                ],
+                [
+                  31.196452,
+                  31.705513
+                ],
+                [
+                  31.196452,
+                  31.707095
+                ],
+                [
+                  31.193692,
+                  31.709204
+                ],
+                [
+                  31.193079,
+                  31.713159
+                ],
+                [
+                  31.178667,
+                  31.715269
+                ],
+                [
+                  31.176214,
+                  31.720542
+                ],
+                [
+                  31.170694,
+                  31.725815
+                ],
+                [
+                  31.168241,
+                  31.726343
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 31.714455,
+            "lon": 31.182915
+          },
+          "areaKm2": 1.23982,
+          "evidence": {
+            "classicalScore": 0.807,
+            "poseatseaOilProbability": 0.793,
+            "poseatseaLookalikeProbability": 0.009,
+            "vvDampingDb": 7.25,
+            "vvVhDifferenceDb": 4.69,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            209,
+            203,
+            303,
+            286
+          ],
+          "pixelCount": 1459,
+          "associatedCandidateIds": [
+            1480,
+            1515,
+            1566
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.841,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  31.168548,
+                  31.719487
+                ],
+                [
+                  31.167321,
+                  31.718169
+                ],
+                [
+                  31.168241,
+                  31.717114
+                ],
+                [
+                  31.170388,
+                  31.716851
+                ],
+                [
+                  31.171001,
+                  31.717378
+                ],
+                [
+                  31.171001,
+                  31.71896
+                ],
+                [
+                  31.168548,
+                  31.719487
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 31.718142,
+            "lon": 31.169367
+          },
+          "areaKm2": 0.09008,
+          "evidence": {
+            "classicalScore": 0.716,
+            "poseatseaOilProbability": 0.745,
+            "poseatseaLookalikeProbability": 0.018,
+            "vvDampingDb": 5.58,
+            "vvVhDifferenceDb": 13.29,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            206,
+            229,
+            219,
+            240
+          ],
+          "pixelCount": 106,
+          "associatedCandidateIds": [
+            1395
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.773,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  31.196759,
+                  31.703931
+                ],
+                [
+                  31.197065,
+                  31.70314
+                ],
+                [
+                  31.198292,
+                  31.702612
+                ],
+                [
+                  31.198292,
+                  31.701294
+                ],
+                [
+                  31.199519,
+                  31.700767
+                ],
+                [
+                  31.199825,
+                  31.702612
+                ],
+                [
+                  31.198905,
+                  31.70314
+                ],
+                [
+                  31.198905,
+                  31.703667
+                ],
+                [
+                  31.198599,
+                  31.702876
+                ],
+                [
+                  31.197679,
+                  31.702876
+                ],
+                [
+                  31.196759,
+                  31.703931
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 31.702215,
+            "lon": 31.19876
+          },
+          "areaKm2": 0.05014,
+          "evidence": {
+            "classicalScore": 0.736,
+            "poseatseaOilProbability": 0.507,
+            "poseatseaLookalikeProbability": 0.034,
+            "vvDampingDb": 4.12,
+            "vvVhDifferenceDb": 6.33,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            302,
+            288,
+            313,
+            301
+          ],
+          "pixelCount": 59,
+          "associatedCandidateIds": [
+            1691
+          ]
+        }
+      ],
+      "retainedCandidates": [
+        {
+          "clusterId": 1480,
+          "area": 27,
+          "bbox": [
+            249,
+            250,
+            260,
+            257
+          ],
+          "centroid": [
+            254.37,
+            252.85
+          ],
+          "fusedScore": 0.962,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.92) + POSEatSea oil (1.00, 587 nearby px).",
+          "evidence": {
+            "classicalScore": 0.916,
+            "poseatseaOilProbability": 0.9726,
+            "poseatseaMaxOilLocal": 0.9954,
+            "poseatseaLookalikeProbability": 0.0046,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 9.21,
+            "vvVhDifferenceDb": 3.6,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1515,
+          "area": 31,
+          "bbox": [
+            276,
+            257,
+            285,
+            264
+          ],
+          "centroid": [
+            280.26,
+            259.74
+          ],
+          "fusedScore": 0.8933,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.76) + POSEatSea oil (1.00, 631 nearby px).",
+          "evidence": {
+            "classicalScore": 0.763,
+            "poseatseaOilProbability": 0.9835,
+            "poseatseaMaxOilLocal": 0.9933,
+            "poseatseaLookalikeProbability": 0.0039,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.46,
+            "vvVhDifferenceDb": 4.79,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1566,
+          "area": 10,
+          "bbox": [
+            285,
+            265,
+            290,
+            270
+          ],
+          "centroid": [
+            286.5,
+            267.5
+          ],
+          "fusedScore": 0.8827,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.74) + POSEatSea oil (1.00, 541 nearby px).",
+          "evidence": {
+            "classicalScore": 0.74,
+            "poseatseaOilProbability": 0.9084,
+            "poseatseaMaxOilLocal": 0.9912,
+            "poseatseaLookalikeProbability": 0.0084,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.07,
+            "vvVhDifferenceDb": 5.69,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1395,
+          "area": 19,
+          "bbox": [
+            206,
+            234,
+            217,
+            238
+          ],
+          "centroid": [
+            211.0,
+            235.11
+          ],
+          "fusedScore": 0.8408,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.72) + POSEatSea oil (0.95, 261 nearby px).",
+          "evidence": {
+            "classicalScore": 0.716,
+            "poseatseaOilProbability": 0.8501,
+            "poseatseaMaxOilLocal": 0.9353,
+            "poseatseaLookalikeProbability": 0.0157,
+            "oilOverlapRatio": 0.947,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 5.58,
+            "vvVhDifferenceDb": 13.29,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1691,
+          "area": 20,
+          "bbox": [
+            302,
+            288,
+            313,
+            295
+          ],
+          "centroid": [
+            306.65,
+            291.2
+          ],
+          "fusedScore": 0.773,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.74) + POSEatSea oil (0.83, 165 nearby px).",
+          "evidence": {
+            "classicalScore": 0.736,
+            "poseatseaOilProbability": 0.3624,
+            "poseatseaMaxOilLocal": 0.8317,
+            "poseatseaLookalikeProbability": 0.0254,
+            "oilOverlapRatio": 0.25,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 4.12,
+            "vvVhDifferenceDb": 6.33,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        }
+      ],
+      "gtBoundingBoxes": [
+        [
+          278,
+          257,
+          284,
+          271
+        ],
+        [
+          433,
+          24,
+          435,
+          95
+        ],
+        [
+          253,
+          251,
+          259,
+          259
+        ]
+      ]
+    },
+    {
+      "sceneId": "ow-0006",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "spillDetected": true,
+      "finalSpillCount": 7,
+      "topConfidence": 0.969,
+      "overlapsGt": true,
+      "bestCandidateBboxIoU": 0.0888,
+      "bestCandidateCentroidDistPx": 7.81,
+      "bestMergedSpillBboxIoU": 0.6481,
+      "bestMergedSpillCentroidDistPx": 4.27,
+      "bestBboxIoU": 0.6481,
+      "bestCentroidDistPx": 4.27,
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 82.92,
+        "poseatseaTimeMs": 67.96,
+        "fusionTimeMs": 43.14,
+        "totalTimeMs": 194.02
+      },
+      "comparison": {
+        "classicalRetained": 31,
+        "poseatseaOilPixels": 3924,
+        "poseatseaLookalikePixels": 220,
+        "poseatseaLandPixels": 0,
+        "hybridRetainedCandidates": 13,
+        "hybridSpillObjects": 7
+      },
+      "spillObjects": [
+        {
+          "spillDetected": true,
+          "confidence": 0.969,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.448675,
+                  32.341133
+                ],
+                [
+                  32.448985,
+                  32.337945
+                ],
+                [
+                  32.447122,
+                  32.336883
+                ],
+                [
+                  32.447433,
+                  32.334492
+                ],
+                [
+                  32.450538,
+                  32.333695
+                ],
+                [
+                  32.452712,
+                  32.332367
+                ],
+                [
+                  32.458612,
+                  32.331305
+                ],
+                [
+                  32.459854,
+                  32.335023
+                ],
+                [
+                  32.459544,
+                  32.33582
+                ],
+                [
+                  32.456128,
+                  32.338477
+                ],
+                [
+                  32.452712,
+                  32.339273
+                ],
+                [
+                  32.450849,
+                  32.340602
+                ],
+                [
+                  32.448675,
+                  32.341133
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.335852,
+            "lon": 32.453392
+          },
+          "areaKm2": 0.81091,
+          "evidence": {
+            "classicalScore": 0.834,
+            "poseatseaOilProbability": 0.904,
+            "poseatseaLookalikeProbability": 0.007,
+            "vvDampingDb": 7.68,
+            "vvVhDifferenceDb": 1.89,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            177,
+            383,
+            219,
+            421
+          ],
+          "pixelCount": 942,
+          "associatedCandidateIds": [
+            2250,
+            2295,
+            2204
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.966,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.462649,
+                  32.39532
+                ],
+                [
+                  32.462339,
+                  32.393992
+                ],
+                [
+                  32.463892,
+                  32.391602
+                ],
+                [
+                  32.466997,
+                  32.388945
+                ],
+                [
+                  32.469481,
+                  32.388414
+                ],
+                [
+                  32.471034,
+                  32.386555
+                ],
+                [
+                  32.475382,
+                  32.389211
+                ],
+                [
+                  32.475382,
+                  32.390539
+                ],
+                [
+                  32.474761,
+                  32.39107
+                ],
+                [
+                  32.472276,
+                  32.391602
+                ],
+                [
+                  32.470724,
+                  32.390539
+                ],
+                [
+                  32.469171,
+                  32.392664
+                ],
+                [
+                  32.465444,
+                  32.393195
+                ],
+                [
+                  32.463892,
+                  32.394258
+                ],
+                [
+                  32.463271,
+                  32.395586
+                ],
+                [
+                  32.462649,
+                  32.39532
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.390651,
+            "lon": 32.468976
+          },
+          "areaKm2": 0.49326,
+          "evidence": {
+            "classicalScore": 0.883,
+            "poseatseaOilProbability": 0.865,
+            "poseatseaLookalikeProbability": 0.007,
+            "vvDampingDb": 7.69,
+            "vvVhDifferenceDb": 5.05,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            226,
+            178,
+            269,
+            213
+          ],
+          "pixelCount": 573,
+          "associatedCandidateIds": [
+            1070,
+            1128,
+            1019
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.931,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.435321,
+                  32.362383
+                ],
+                [
+                  32.434079,
+                  32.356539
+                ],
+                [
+                  32.435632,
+                  32.351227
+                ],
+                [
+                  32.440911,
+                  32.344586
+                ],
+                [
+                  32.442153,
+                  32.345383
+                ],
+                [
+                  32.444017,
+                  32.344852
+                ],
+                [
+                  32.444638,
+                  32.346977
+                ],
+                [
+                  32.443706,
+                  32.346711
+                ],
+                [
+                  32.441843,
+                  32.348836
+                ],
+                [
+                  32.439048,
+                  32.350164
+                ],
+                [
+                  32.435632,
+                  32.357336
+                ],
+                [
+                  32.436874,
+                  32.358133
+                ],
+                [
+                  32.436874,
+                  32.36132
+                ],
+                [
+                  32.437806,
+                  32.362117
+                ],
+                [
+                  32.435321,
+                  32.362383
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.352113,
+            "lon": 32.438187
+          },
+          "areaKm2": 0.5759,
+          "evidence": {
+            "classicalScore": 0.812,
+            "poseatseaOilProbability": 0.793,
+            "poseatseaLookalikeProbability": 0.037,
+            "vvDampingDb": 7.49,
+            "vvVhDifferenceDb": 2.71,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            135,
+            303,
+            171,
+            371
+          ],
+          "pixelCount": 669,
+          "associatedCandidateIds": [
+            1796,
+            1988,
+            1715
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.93,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.46296,
+                  32.380977
+                ],
+                [
+                  32.462028,
+                  32.38018
+                ],
+                [
+                  32.461718,
+                  32.377258
+                ],
+                [
+                  32.463271,
+                  32.379914
+                ],
+                [
+                  32.46296,
+                  32.380977
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.379289,
+            "lon": 32.462408
+          },
+          "areaKm2": 0.04649,
+          "evidence": {
+            "classicalScore": 0.849,
+            "poseatseaOilProbability": 0.705,
+            "poseatseaLookalikeProbability": 0.029,
+            "vvDampingDb": 7.39,
+            "vvVhDifferenceDb": 9.34,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            224,
+            233,
+            230,
+            248
+          ],
+          "pixelCount": 54,
+          "associatedCandidateIds": [
+            1317
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.928,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.463892,
+                  32.413383
+                ],
+                [
+                  32.468239,
+                  32.412055
+                ],
+                [
+                  32.471034,
+                  32.407008
+                ],
+                [
+                  32.472897,
+                  32.406477
+                ],
+                [
+                  32.475382,
+                  32.403555
+                ],
+                [
+                  32.479729,
+                  32.404883
+                ],
+                [
+                  32.481903,
+                  32.404617
+                ],
+                [
+                  32.483456,
+                  32.403023
+                ],
+                [
+                  32.485009,
+                  32.404352
+                ],
+                [
+                  32.486251,
+                  32.402758
+                ],
+                [
+                  32.49122,
+                  32.402758
+                ],
+                [
+                  32.490599,
+                  32.404352
+                ],
+                [
+                  32.48563,
+                  32.405945
+                ],
+                [
+                  32.484388,
+                  32.407539
+                ],
+                [
+                  32.479419,
+                  32.408602
+                ],
+                [
+                  32.477556,
+                  32.410992
+                ],
+                [
+                  32.470724,
+                  32.414445
+                ],
+                [
+                  32.466065,
+                  32.415508
+                ],
+                [
+                  32.463892,
+                  32.413383
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.408351,
+            "lon": 32.476582
+          },
+          "areaKm2": 1.30847,
+          "evidence": {
+            "classicalScore": 0.841,
+            "poseatseaOilProbability": 0.863,
+            "poseatseaLookalikeProbability": 0.018,
+            "vvDampingDb": 8.58,
+            "vvVhDifferenceDb": -0.36,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            231,
+            103,
+            320,
+            153
+          ],
+          "pixelCount": 1520,
+          "associatedCandidateIds": [
+            771
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.881,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.460165,
+                  32.410992
+                ],
+                [
+                  32.461718,
+                  32.410195
+                ],
+                [
+                  32.462028,
+                  32.410992
+                ],
+                [
+                  32.460165,
+                  32.410992
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.410686,
+            "lon": 32.461168
+          },
+          "areaKm2": 0.01119,
+          "evidence": {
+            "classicalScore": 0.786,
+            "poseatseaOilProbability": 0.17,
+            "poseatseaLookalikeProbability": 0.086,
+            "vvDampingDb": 8.73,
+            "vvVhDifferenceDb": -0.1,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            219,
+            120,
+            226,
+            124
+          ],
+          "pixelCount": 13,
+          "associatedCandidateIds": [
+            698
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.799,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  32.438737,
+                  32.364508
+                ],
+                [
+                  32.437185,
+                  32.363977
+                ],
+                [
+                  32.437185,
+                  32.363445
+                ],
+                [
+                  32.438427,
+                  32.363445
+                ],
+                [
+                  32.438737,
+                  32.364508
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 32.363804,
+            "lon": 32.437883
+          },
+          "areaKm2": 0.01722,
+          "evidence": {
+            "classicalScore": 0.785,
+            "poseatseaOilProbability": 0.171,
+            "poseatseaLookalikeProbability": 0.682,
+            "vvDampingDb": 6.89,
+            "vvVhDifferenceDb": 0.3,
+            "coastalProximity": 0.0
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            145,
+            295,
+            151,
+            301
+          ],
+          "pixelCount": 20,
+          "associatedCandidateIds": [
+            1663
+          ]
+        }
+      ],
+      "retainedCandidates": [
+        {
+          "clusterId": 2250,
+          "area": 36,
+          "bbox": [
+            178,
+            398,
+            191,
+            409
+          ],
+          "centroid": [
+            184.75,
+            403.0
+          ],
+          "fusedScore": 0.9689,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.93) + POSEatSea oil (1.00, 698 nearby px).",
+          "evidence": {
+            "classicalScore": 0.931,
+            "poseatseaOilProbability": 0.9671,
+            "poseatseaMaxOilLocal": 0.996,
+            "poseatseaLookalikeProbability": 0.0045,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.0,
+            "vvVhDifferenceDb": 2.79,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1070,
+          "area": 30,
+          "bbox": [
+            229,
+            187,
+            242,
+            198
+          ],
+          "centroid": [
+            235.2,
+            191.0
+          ],
+          "fusedScore": 0.9658,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.93) + POSEatSea oil (1.00, 430 nearby px).",
+          "evidence": {
+            "classicalScore": 0.925,
+            "poseatseaOilProbability": 0.9582,
+            "poseatseaMaxOilLocal": 0.9931,
+            "poseatseaLookalikeProbability": 0.0087,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 9.01,
+            "vvVhDifferenceDb": 5.88,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1128,
+          "area": 30,
+          "bbox": [
+            256,
+            197,
+            267,
+            204
+          ],
+          "centroid": [
+            261.03,
+            200.8
+          ],
+          "fusedScore": 0.9604,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.91) + POSEatSea oil (1.00, 402 nearby px).",
+          "evidence": {
+            "classicalScore": 0.912,
+            "poseatseaOilProbability": 0.9875,
+            "poseatseaMaxOilLocal": 0.9956,
+            "poseatseaLookalikeProbability": 0.0019,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.98,
+            "vvVhDifferenceDb": 3.84,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1796,
+          "area": 18,
+          "bbox": [
+            136,
+            318,
+            140,
+            326
+          ],
+          "centroid": [
+            137.28,
+            322.78
+          ],
+          "fusedScore": 0.9314,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.85) + POSEatSea oil (1.00, 275 nearby px).",
+          "evidence": {
+            "classicalScore": 0.852,
+            "poseatseaOilProbability": 0.8695,
+            "poseatseaMaxOilLocal": 0.9713,
+            "poseatseaLookalikeProbability": 0.0432,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 7.3,
+            "vvVhDifferenceDb": 2.27,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1317,
+          "area": 10,
+          "bbox": [
+            226,
+            233,
+            230,
+            241
+          ],
+          "centroid": [
+            227.5,
+            236.5
+          ],
+          "fusedScore": 0.9305,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.85) + POSEatSea oil (1.00, 54 nearby px).",
+          "evidence": {
+            "classicalScore": 0.849,
+            "poseatseaOilProbability": 0.7752,
+            "poseatseaMaxOilLocal": 0.8872,
+            "poseatseaLookalikeProbability": 0.0299,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 7.39,
+            "vvVhDifferenceDb": 9.34,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 771,
+          "area": 39,
+          "bbox": [
+            273,
+            132,
+            286,
+            142
+          ],
+          "centroid": [
+            280.51,
+            136.31
+          ],
+          "fusedScore": 0.9278,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.84) + POSEatSea oil (1.00, 870 nearby px).",
+          "evidence": {
+            "classicalScore": 0.841,
+            "poseatseaOilProbability": 0.9599,
+            "poseatseaMaxOilLocal": 0.9845,
+            "poseatseaLookalikeProbability": 0.0121,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.58,
+            "vvVhDifferenceDb": -0.36,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 2295,
+          "area": 14,
+          "bbox": [
+            193,
+            406,
+            200,
+            411
+          ],
+          "centroid": [
+            196.21,
+            407.79
+          ],
+          "fusedScore": 0.9123,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.81) + POSEatSea oil (1.00, 819 nearby px).",
+          "evidence": {
+            "classicalScore": 0.805,
+            "poseatseaOilProbability": 0.9935,
+            "poseatseaMaxOilLocal": 0.996,
+            "poseatseaLookalikeProbability": 0.0019,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.63,
+            "vvVhDifferenceDb": 1.8,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1019,
+          "area": 11,
+          "bbox": [
+            226,
+            179,
+            230,
+            185
+          ],
+          "centroid": [
+            228.0,
+            182.36
+          ],
+          "fusedScore": 0.9117,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.81) + POSEatSea oil (0.99, 210 nearby px).",
+          "evidence": {
+            "classicalScore": 0.813,
+            "poseatseaOilProbability": 0.8405,
+            "poseatseaMaxOilLocal": 0.9931,
+            "poseatseaLookalikeProbability": 0.0177,
+            "oilOverlapRatio": 0.909,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 7.09,
+            "vvVhDifferenceDb": 5.42,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1988,
+          "area": 10,
+          "bbox": [
+            147,
+            354,
+            152,
+            360
+          ],
+          "centroid": [
+            148.4,
+            356.7
+          ],
+          "fusedScore": 0.9093,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.80) + POSEatSea oil (1.00, 377 nearby px).",
+          "evidence": {
+            "classicalScore": 0.8,
+            "poseatseaOilProbability": 0.8356,
+            "poseatseaMaxOilLocal": 0.9835,
+            "poseatseaLookalikeProbability": 0.0116,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.35,
+            "vvVhDifferenceDb": 3.7,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 2204,
+          "area": 20,
+          "bbox": [
+            186,
+            391,
+            194,
+            400
+          ],
+          "centroid": [
+            188.65,
+            395.85
+          ],
+          "fusedScore": 0.8935,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.76) + POSEatSea oil (1.00, 722 nearby px).",
+          "evidence": {
+            "classicalScore": 0.764,
+            "poseatseaOilProbability": 0.9836,
+            "poseatseaMaxOilLocal": 0.996,
+            "poseatseaLookalikeProbability": 0.0049,
+            "oilOverlapRatio": 1.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.4,
+            "vvVhDifferenceDb": 1.07,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 698,
+          "area": 13,
+          "bbox": [
+            219,
+            120,
+            226,
+            124
+          ],
+          "centroid": [
+            222.23,
+            121.15
+          ],
+          "fusedScore": 0.8806,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.79) + POSEatSea oil (0.96, 83 nearby px).",
+          "evidence": {
+            "classicalScore": 0.786,
+            "poseatseaOilProbability": 0.1701,
+            "poseatseaMaxOilLocal": 0.9586,
+            "poseatseaLookalikeProbability": 0.0862,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.73,
+            "vvVhDifferenceDb": -0.1,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1715,
+          "area": 12,
+          "bbox": [
+            143,
+            304,
+            148,
+            308
+          ],
+          "centroid": [
+            145.17,
+            305.08
+          ],
+          "fusedScore": 0.8493,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.78) + POSEatSea oil (0.91, 139 nearby px).",
+          "evidence": {
+            "classicalScore": 0.783,
+            "poseatseaOilProbability": 0.3174,
+            "poseatseaMaxOilLocal": 0.9084,
+            "poseatseaLookalikeProbability": 0.2392,
+            "oilOverlapRatio": 0.167,
+            "lookalikeOverlapRatio": 0.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 8.82,
+            "vvVhDifferenceDb": 2.15,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        },
+        {
+          "clusterId": 1663,
+          "area": 20,
+          "bbox": [
+            145,
+            295,
+            151,
+            301
+          ],
+          "centroid": [
+            147.25,
+            297.65
+          ],
+          "fusedScore": 0.7987,
+          "rule": "open_water_dual_confirmed",
+          "decisionPath": "Dual confirmation: Classical (0.78) + POSEatSea oil (0.88, 83 nearby px).",
+          "evidence": {
+            "classicalScore": 0.785,
+            "poseatseaOilProbability": 0.1713,
+            "poseatseaMaxOilLocal": 0.8792,
+            "poseatseaLookalikeProbability": 0.6824,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 1.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 6.89,
+            "vvVhDifferenceDb": 0.3,
+            "coastalProximity": 0.0,
+            "distanceToLandPx": null
+          }
+        }
+      ],
+      "gtBoundingBoxes": [
+        [
+          227,
+          86,
+          321,
+          178
+        ],
+        [
+          152,
+          229,
+          234,
+          429
+        ],
+        [
+          228,
+          167,
+          263,
+          213
+        ],
+        [
+          350,
+          163,
+          376,
+          189
+        ]
+      ]
+    },
+    {
+      "sceneId": "oc-0001",
+      "type": "oil",
+      "category": "oc (oil/coast)",
+      "spillDetected": true,
+      "finalSpillCount": 4,
+      "topConfidence": 0.615,
+      "overlapsGt": true,
+      "bestCandidateBboxIoU": 0.0436,
+      "bestCandidateCentroidDistPx": 12.04,
+      "bestMergedSpillBboxIoU": 0.0436,
+      "bestMergedSpillCentroidDistPx": 13.45,
+      "bestBboxIoU": 0.0436,
+      "bestCentroidDistPx": 12.04,
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 45.94,
+        "poseatseaTimeMs": 65.34,
+        "fusionTimeMs": 11.18,
+        "totalTimeMs": 122.46
+      },
+      "comparison": {
+        "classicalRetained": 8,
+        "poseatseaOilPixels": 0,
+        "poseatseaLookalikePixels": 4157,
+        "poseatseaLandPixels": 3199,
+        "hybridRetainedCandidates": 4,
+        "hybridSpillObjects": 4
+      },
+      "spillObjects": [
+        {
+          "spillDetected": true,
+          "confidence": 0.615,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  35.861427,
+                  34.457942
+                ],
+                [
+                  35.858526,
+                  34.457942
+                ],
+                [
+                  35.858526,
+                  34.45714
+                ],
+                [
+                  35.859171,
+                  34.457675
+                ],
+                [
+                  35.861427,
+                  34.457942
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 34.457782,
+            "lon": 35.859638
+          },
+          "areaKm2": 0.01758,
+          "evidence": {
+            "classicalScore": 0.587,
+            "poseatseaOilProbability": 0.0,
+            "poseatseaLookalikeProbability": 0.445,
+            "vvDampingDb": 3.5,
+            "vvVhDifferenceDb": 0.88,
+            "coastalProximity": 0.757
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            479,
+            208,
+            489,
+            213
+          ],
+          "pixelCount": 20,
+          "associatedCandidateIds": [
+            1115
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.614,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  35.779249,
+                  34.391315
+                ],
+                [
+                  35.778604,
+                  34.390245
+                ],
+                [
+                  35.778604,
+                  34.388372
+                ],
+                [
+                  35.780538,
+                  34.390513
+                ],
+                [
+                  35.779249,
+                  34.391315
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 34.390074,
+            "lon": 35.779307
+          },
+          "areaKm2": 0.03428,
+          "evidence": {
+            "classicalScore": 0.668,
+            "poseatseaOilProbability": 0.0,
+            "poseatseaLookalikeProbability": 0.532,
+            "vvDampingDb": 3.71,
+            "vvVhDifferenceDb": -0.9,
+            "coastalProximity": 0.151
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            231,
+            458,
+            238,
+            470
+          ],
+          "pixelCount": 39,
+          "associatedCandidateIds": [
+            2002
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.553,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  35.825978,
+                  34.456872
+                ],
+                [
+                  35.825978,
+                  34.455534
+                ],
+                [
+                  35.826622,
+                  34.455534
+                ],
+                [
+                  35.826622,
+                  34.456604
+                ],
+                [
+                  35.825978,
+                  34.456872
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 34.456132,
+            "lon": 35.826243
+          },
+          "areaKm2": 0.01494,
+          "evidence": {
+            "classicalScore": 0.515,
+            "poseatseaOilProbability": 0.0,
+            "poseatseaLookalikeProbability": 0.743,
+            "vvDampingDb": 3.16,
+            "vvVhDifferenceDb": 3.13,
+            "coastalProximity": 0.91
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            377,
+            213,
+            381,
+            219
+          ],
+          "pixelCount": 17,
+          "associatedCandidateIds": [
+            1125
+          ]
+        },
+        {
+          "spillDetected": true,
+          "confidence": 0.522,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  35.807286,
+                  34.445099
+                ],
+                [
+                  35.808253,
+                  34.444831
+                ],
+                [
+                  35.80922,
+                  34.445366
+                ],
+                [
+                  35.807286,
+                  34.445099
+                ]
+              ]
+            ]
+          },
+          "centroid": {
+            "lat": 34.445222,
+            "lon": 35.808129
+          },
+          "areaKm2": 0.01143,
+          "evidence": {
+            "classicalScore": 0.543,
+            "poseatseaOilProbability": 0.0,
+            "poseatseaLookalikeProbability": 0.487,
+            "vvDampingDb": 2.81,
+            "vvVhDifferenceDb": 1.67,
+            "coastalProximity": 0.217
+          },
+          "source": {
+            "satellite": "Sentinel-1",
+            "polarizations": [
+              "VV",
+              "VH"
+            ]
+          },
+          "rasterBbox": [
+            320,
+            256,
+            327,
+            259
+          ],
+          "pixelCount": 13,
+          "associatedCandidateIds": [
+            1311
+          ]
+        }
+      ],
+      "retainedCandidates": [
+        {
+          "clusterId": 1115,
+          "area": 14,
+          "bbox": [
+            479,
+            208,
+            489,
+            213
+          ],
+          "centroid": [
+            482.79,
+            209.36
+          ],
+          "fusedScore": 0.6151,
+          "rule": "coastal_preserved",
+          "decisionPath": "Coastal persistence active (proximity=0.76, dist_land=14.6px). Lookalike penalty suppressed.",
+          "evidence": {
+            "classicalScore": 0.587,
+            "poseatseaOilProbability": 0.0003,
+            "poseatseaMaxOilLocal": 0.0007,
+            "poseatseaLookalikeProbability": 0.4683,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 0.429,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 3.5,
+            "vvVhDifferenceDb": 0.88,
+            "coastalProximity": 0.757,
+            "distanceToLandPx": 14.6
+          }
+        },
+        {
+          "clusterId": 2002,
+          "area": 29,
+          "bbox": [
+            231,
+            458,
+            238,
+            470
+          ],
+          "centroid": [
+            233.14,
+            462.52
+          ],
+          "fusedScore": 0.6141,
+          "rule": "coastal_preserved",
+          "decisionPath": "Coastal persistence active (proximity=0.15, dist_land=50.9px). Lookalike penalty suppressed.",
+          "evidence": {
+            "classicalScore": 0.668,
+            "poseatseaOilProbability": 0.0001,
+            "poseatseaMaxOilLocal": 0.0008,
+            "poseatseaLookalikeProbability": 0.5274,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 0.724,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 3.71,
+            "vvVhDifferenceDb": -0.9,
+            "coastalProximity": 0.151,
+            "distanceToLandPx": 50.9
+          }
+        },
+        {
+          "clusterId": 1125,
+          "area": 14,
+          "bbox": [
+            377,
+            213,
+            381,
+            219
+          ],
+          "centroid": [
+            378.57,
+            215.71
+          ],
+          "fusedScore": 0.5533,
+          "rule": "coastal_preserved",
+          "decisionPath": "Coastal persistence active (proximity=0.91, dist_land=5.4px). Lookalike penalty suppressed.",
+          "evidence": {
+            "classicalScore": 0.515,
+            "poseatseaOilProbability": 0.0002,
+            "poseatseaMaxOilLocal": 0.0004,
+            "poseatseaLookalikeProbability": 0.7349,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 1.0,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 3.16,
+            "vvVhDifferenceDb": 3.13,
+            "coastalProximity": 0.91,
+            "distanceToLandPx": 5.4
+          }
+        },
+        {
+          "clusterId": 1311,
+          "area": 12,
+          "bbox": [
+            320,
+            256,
+            327,
+            259
+          ],
+          "centroid": [
+            322.5,
+            256.5
+          ],
+          "fusedScore": 0.5225,
+          "rule": "coastal_preserved",
+          "decisionPath": "Coastal persistence active (proximity=0.22, dist_land=47.0px). Lookalike penalty suppressed.",
+          "evidence": {
+            "classicalScore": 0.543,
+            "poseatseaOilProbability": 0.0003,
+            "poseatseaMaxOilLocal": 0.0048,
+            "poseatseaLookalikeProbability": 0.4869,
+            "oilOverlapRatio": 0.0,
+            "lookalikeOverlapRatio": 0.333,
+            "landOverlapRatio": 0.0,
+            "vvDampingDb": 2.81,
+            "vvVhDifferenceDb": 1.67,
+            "coastalProximity": 0.217,
+            "distanceToLandPx": 47.0
+          }
+        }
+      ],
+      "gtBoundingBoxes": [
+        [
+          267,
+          196,
+          323,
+          225
+        ],
+        [
+          305,
+          324,
+          357,
+          345
+        ],
+        [
+          264,
+          247,
+          347,
+          296
+        ],
+        [
+          287,
+          243,
+          340,
+          254
+        ],
+        [
+          450,
+          187,
+          488,
+          214
+        ]
+      ]
+    },
+    {
+      "sceneId": "nw-0001",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "spillDetected": false,
+      "finalSpillCount": 0,
+      "topConfidence": 0.0,
+      "overlapsGt": "N/A",
+      "bestCandidateBboxIoU": "N/A",
+      "bestCandidateCentroidDistPx": "N/A",
+      "bestMergedSpillBboxIoU": "N/A",
+      "bestMergedSpillCentroidDistPx": "N/A",
+      "bestBboxIoU": "N/A",
+      "bestCentroidDistPx": "N/A",
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 106.44,
+        "poseatseaTimeMs": 67.3,
+        "fusionTimeMs": 27.66,
+        "totalTimeMs": 201.4
+      },
+      "comparison": {
+        "classicalRetained": 44,
+        "poseatseaOilPixels": 0,
+        "poseatseaLookalikePixels": 1862,
+        "poseatseaLandPixels": 0,
+        "hybridRetainedCandidates": 0,
+        "hybridSpillObjects": 0
+      },
+      "spillObjects": [],
+      "retainedCandidates": [],
+      "gtBoundingBoxes": []
+    },
+    {
+      "sceneId": "nw-0002",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "spillDetected": false,
+      "finalSpillCount": 0,
+      "topConfidence": 0.0,
+      "overlapsGt": "N/A",
+      "bestCandidateBboxIoU": "N/A",
+      "bestCandidateCentroidDistPx": "N/A",
+      "bestMergedSpillBboxIoU": "N/A",
+      "bestMergedSpillCentroidDistPx": "N/A",
+      "bestBboxIoU": "N/A",
+      "bestCentroidDistPx": "N/A",
+      "failureReason": null,
+      "performance": {
+        "classicalTimeMs": 90.21,
+        "poseatseaTimeMs": 67.4,
+        "fusionTimeMs": 20.18,
+        "totalTimeMs": 177.79
+      },
+      "comparison": {
+        "classicalRetained": 33,
+        "poseatseaOilPixels": 0,
+        "poseatseaLookalikePixels": 1635,
+        "poseatseaLandPixels": 0,
+        "hybridRetainedCandidates": 0,
+        "hybridSpillObjects": 0
+      },
+      "spillObjects": [],
+      "retainedCandidates": [],
+      "gtBoundingBoxes": []
+    }
+  ]
+}

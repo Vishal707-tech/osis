@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0-prototype",
+  "description": "Multi-source evidence fusion parameters for O.S.I.S. Hybrid SAR Spill Detector",
+  "classical": {
+    "windowRadius": 25,
+    "kSigma": 2.0,
+    "minDampingDb": 3.5,
+    "closingKernel": [
+      3,
+      3
+    ],
+    "minCandidatePixels": 10,
+    "candidateThresholdScore": 0.5
+  },
+  "poseatsea": {
+    "architecture": "U-Net + MiT-B2",
+    "checkpoint": "best_sar_model.pth",
+    "numClasses": 5,
+    "classNames": [
+      "Sea Surface",
+      "Oil Spill",
+      "Look-alike",
+      "Ship",
+      "Land"
+    ],
+    "inputChannels": [
+      "VV_norm",
+      "VH_norm",
+      "(VV-VH)_norm"
+    ],
+    "percentileLow": 2.0,
+    "percentileHigh": 98.0
+  },
+  "fusionWeights": {
+    "openWaterDualConfirmed": {
+      "wClassical": 0.45,
+      "wPoseOil": 0.45,
+      "wDampingBonus": 0.1,
+      "wLookalikePenalty": 0.05,
+      "minDampingNormMax": 6.0
+    },
+    "openWaterUnconfirmed": {
+      "suppressionFactor": 0.2
+    },
+    "coastal": {
+      "coastalProximityRadiusPx": 60.0,
+      "coastalProximityThreshold": 0.1,
+      "lookalikeSuppressionDamping": 1.0,
+      "wClassicalPersistence": 1.0,
+      "wLookalikePenaltyBase": 0.15,
+      "wPoseOilBonus": 0.15,
+      "wCoastalPersistenceBonus": 0.05
+    },
+    "spatialMerging": {
+      "maxClusterDistancePx": 30.0,
+      "includeIntersectingDlOil": true,
+      "contourSimplifyEpsilon": 0.01
+    },
+    "landArtifactFilter": {
+      "maxLandOverlapAllowed": 0.4
+    },
+    "decisionThreshold": 0.5
+  }
+}

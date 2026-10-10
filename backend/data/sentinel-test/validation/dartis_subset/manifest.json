@@ -1,0 +1,187 @@
+[
+  {
+    "id": "ow-0004",
+    "type": "oil",
+    "category": "ow (oil/water)",
+    "sceneId": "S1B_IW_GRDH_1SDV_20190110T155611_20190110T155635_014434_01ADED_1E1A.SAFE",
+    "date": "2019-01-10",
+    "aoiBbox": [
+      31.104,
+      31.645,
+      31.261,
+      31.78
+    ],
+    "corners": {
+      "ul": {
+        "lon": 31.1283623,
+        "lat": 31.6449359
+      },
+      "ur": {
+        "lon": 31.2613575,
+        "lat": 31.6652193
+      },
+      "br": {
+        "lon": 31.2370198,
+        "lat": 31.7801461
+      },
+      "bl": {
+        "lon": 31.1040246,
+        "lat": 31.7598627
+      }
+    },
+    "files": {
+      "jpg": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0004.jpg",
+      "xml": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0004.xml",
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0004_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0004_vh_db.tif"
+    }
+  },
+  {
+    "id": "ow-0006",
+    "type": "oil",
+    "category": "ow (oil/water)",
+    "sceneId": "S1A_IW_GRDH_1SDV_20190111T154901_20190111T154926_025432_02D14A_4A63.SAFE",
+    "date": "2019-01-11",
+    "aoiBbox": [
+      32.392,
+      32.307,
+      32.551,
+      32.443
+    ],
+    "corners": {
+      "ul": {
+        "lon": 32.4171253,
+        "lat": 32.3066615
+      },
+      "ur": {
+        "lon": 32.5508189,
+        "lat": 32.3277158
+      },
+      "br": {
+        "lon": 32.5252986,
+        "lat": 32.4429257
+      },
+      "bl": {
+        "lon": 32.391605,
+        "lat": 32.4218714
+      }
+    },
+    "files": {
+      "jpg": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0006.jpg",
+      "xml": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0006.xml",
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0006_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\ow-0006_vh_db.tif"
+    }
+  },
+  {
+    "id": "oc-0001",
+    "type": "oil",
+    "category": "oc (oil/coast)",
+    "sceneId": "S1B_IW_GRDH_1SDV_20190101T034235_20190101T034300_014295_01A97E_458A.SAFE",
+    "date": "2019-01-01",
+    "aoiBbox": [
+      35.704,
+      34.377,
+      35.869,
+      34.514
+    ],
+    "corners": {
+      "ul": {
+        "lon": 35.8685045,
+        "lat": 34.4925487
+      },
+      "ur": {
+        "lon": 35.7317538,
+        "lat": 34.5141162
+      },
+      "br": {
+        "lon": 35.7041327,
+        "lat": 34.3990599
+      },
+      "bl": {
+        "lon": 35.8408834,
+        "lat": 34.3774924
+      }
+    },
+    "files": {
+      "jpg": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\oc-0001.jpg",
+      "xml": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\oc-0001.xml",
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\oc-0001_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\oc-0001_vh_db.tif"
+    }
+  },
+  {
+    "id": "nw-0001",
+    "type": "look-alike",
+    "category": "nw (no_oil/water)",
+    "sceneId": "S1B_IW_GRDH_1SDV_20190101T034300_20190101T034325_014295_01A97E_39B8.SAFE",
+    "date": "2019-01-01",
+    "aoiBbox": [
+      33.298,
+      32.713,
+      33.457,
+      32.848
+    ],
+    "corners": {
+      "ul": {
+        "lon": 33.4572911,
+        "lat": 32.8277707
+      },
+      "ur": {
+        "lon": 33.3223862,
+        "lat": 32.8480599
+      },
+      "br": {
+        "lon": 33.2974959,
+        "lat": 32.7329049
+      },
+      "bl": {
+        "lon": 33.4324008,
+        "lat": 32.7126158
+      }
+    },
+    "files": {
+      "jpg": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0001.jpg",
+      "xml": null,
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0001_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0001_vh_db.tif"
+    }
+  },
+  {
+    "id": "nw-0002",
+    "type": "look-alike",
+    "category": "nw (no_oil/water)",
+    "sceneId": "S1A_IW_GRDH_1SDV_20190104T155728_20190104T155753_025330_02CD9D_B67E.SAFE",
+    "date": "2019-01-04",
+    "aoiBbox": [
+      31.29,
+      34.05,
+      31.449,
+      34.186
+    ],
+    "corners": {
+      "ul": {
+        "lon": 31.3143719,
+        "lat": 34.0503416
+      },
+      "ur": {
+        "lon": 31.4487787,
+        "lat": 34.0706251
+      },
+      "br": {
+        "lon": 31.4240545,
+        "lat": 34.1860492
+      },
+      "bl": {
+        "lon": 31.2896478,
+        "lat": 34.1657657
+      }
+    },
+    "files": {
+      "jpg": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0002.jpg",
+      "xml": null,
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0002_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\dartis_subset\\nw-0002_vh_db.tif"
+    }
+  }
+]

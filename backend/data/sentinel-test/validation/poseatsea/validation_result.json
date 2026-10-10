@@ -1,0 +1,333 @@
+{
+  "experiment": "POSEatSea Pretrained SAR Zero-Shot Validation",
+  "timestamp": "2026-09-07T23:28:00Z",
+  "model": {
+    "checkpoint": "best_sar_model.pth",
+    "architecture": "U-Net with MiT-B2 (Mix Transformer) encoder",
+    "weightsPath": "best_sar_model.pth",
+    "device": "cuda",
+    "gpuName": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "cudaAvailable": true,
+    "classes": [
+      "Sea Surface",
+      "Oil Spill",
+      "Look-alike",
+      "Ship",
+      "Land"
+    ]
+  },
+  "targetScene": {
+    "id": "DARTIS_2019 ow-0002",
+    "patchName": "S1_20190104_155638_155818_VV_2",
+    "rasterWidth": 512,
+    "rasterHeight": 512,
+    "vvPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\s1a_20190104_vv_db.tif",
+    "vhPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\s1a_20190104_vh_db.tif",
+    "xmlPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\ow-0002.xml"
+  },
+  "groundTruth": {
+    "className": "oil",
+    "patchBbox": [
+      309,
+      282,
+      340,
+      342
+    ],
+    "patchCentroid": [
+      324.5,
+      312.0
+    ],
+    "patchAreaPx": 1860,
+    "rasterBbox": [
+      253,
+      237,
+      267,
+      282
+    ],
+    "rasterCentroid": [
+      260.2583441050992,
+      259.5025690037105
+    ],
+    "rasterAreaPx": 630,
+    "geoCentroid": [
+      32.028959101610354,
+      31.685444635125975
+    ]
+  },
+  "normalization": {
+    "method": "Percentile clipping (2.0% - 98.0%) linear scaling to [0.0, 1.0]",
+    "vv": {
+      "p2_dB": -27.87,
+      "p98_dB": -17.77,
+      "mean_dB": -22.33
+    },
+    "vh": {
+      "p2_dB": -49.84,
+      "p98_dB": -27.5,
+      "mean_dB": -35.19
+    },
+    "diff_vv_minus_vh": {
+      "p2_dB": 3.19,
+      "p98_dB": 28.03,
+      "mean_dB": 12.86
+    }
+  },
+  "experimentA_VV_VV_VV": {
+    "classPixelCounts": {
+      "sea_0": 260202,
+      "oil_1": 761,
+      "lookalike_2": 0,
+      "ship_3": 1181,
+      "land_4": 0
+    },
+    "oilMetrics": {
+      "totalOilPixels": 761,
+      "oilRegionsCount": 2,
+      "estimatedAreaKm2NativeRes": 0.2251,
+      "estimatedAreaKm210mRes": 0.0761,
+      "overallBbox": [
+        126,
+        108,
+        274,
+        278
+      ],
+      "overallCentroid": [
+        246.98,
+        240.7
+      ],
+      "overallBboxIoU": 0.0228,
+      "overallCentroidDistPx": 23.02,
+      "overallOverlapsGt": true,
+      "oilPixelsInsideGtBox": 361,
+      "mainRegion": {
+        "regionId": 2,
+        "pixelCount": 691,
+        "bbox": [
+          245,
+          228,
+          275,
+          279
+        ],
+        "centroid": [
+          258.84,
+          253.59
+        ],
+        "overlapsGt": true,
+        "overlapPixelsWithGt": 361,
+        "bboxIoUWithGt": 0.374,
+        "centroidDistToGtPx": 6.08
+      },
+      "allRegions": [
+        {
+          "regionId": 1,
+          "pixelCount": 70,
+          "bbox": [
+            126,
+            108,
+            134,
+            120
+          ],
+          "centroid": [
+            129.9,
+            113.51
+          ],
+          "overlapsGt": false,
+          "overlapPixelsWithGt": 0,
+          "bboxIoUWithGt": 0.0,
+          "centroidDistToGtPx": 195.72
+        },
+        {
+          "regionId": 2,
+          "pixelCount": 691,
+          "bbox": [
+            245,
+            228,
+            275,
+            279
+          ],
+          "centroid": [
+            258.84,
+            253.59
+          ],
+          "overlapsGt": true,
+          "overlapPixelsWithGt": 361,
+          "bboxIoUWithGt": 0.374,
+          "centroidDistToGtPx": 6.08
+        }
+      ]
+    }
+  },
+  "experimentB_VV_VH_Diff": {
+    "classPixelCounts": {
+      "sea_0": 261211,
+      "oil_1": 236,
+      "lookalike_2": 0,
+      "ship_3": 697,
+      "land_4": 0
+    },
+    "oilMetrics": {
+      "totalOilPixels": 236,
+      "oilRegionsCount": 4,
+      "estimatedAreaKm2NativeRes": 0.0698,
+      "estimatedAreaKm210mRes": 0.0236,
+      "overallBbox": [
+        128,
+        108,
+        469,
+        381
+      ],
+      "overallCentroid": [
+        241.79,
+        233.09
+      ],
+      "overallBboxIoU": 0.0068,
+      "overallCentroidDistPx": 32.23,
+      "overallOverlapsGt": true,
+      "oilPixelsInsideGtBox": 141,
+      "mainRegion": {
+        "regionId": 2,
+        "pixelCount": 172,
+        "bbox": [
+          254,
+          246,
+          271,
+          272
+        ],
+        "centroid": [
+          262.17,
+          257.77
+        ],
+        "overlapsGt": true,
+        "overlapPixelsWithGt": 141,
+        "bboxIoUWithGt": 0.4605,
+        "centroidDistToGtPx": 2.58
+      },
+      "allRegions": [
+        {
+          "regionId": 1,
+          "pixelCount": 49,
+          "bbox": [
+            128,
+            108,
+            133,
+            120
+          ],
+          "centroid": [
+            130.12,
+            113.47
+          ],
+          "overlapsGt": false,
+          "overlapPixelsWithGt": 0,
+          "bboxIoUWithGt": 0.0,
+          "centroidDistToGtPx": 195.6
+        },
+        {
+          "regionId": 2,
+          "pixelCount": 172,
+          "bbox": [
+            254,
+            246,
+            271,
+            272
+          ],
+          "centroid": [
+            262.17,
+            257.77
+          ],
+          "overlapsGt": true,
+          "overlapPixelsWithGt": 141,
+          "bboxIoUWithGt": 0.4605,
+          "centroidDistToGtPx": 2.58
+        },
+        {
+          "regionId": 3,
+          "pixelCount": 8,
+          "bbox": [
+            288,
+            305,
+            292,
+            309
+          ],
+          "centroid": [
+            289.88,
+            306.62
+          ],
+          "overlapsGt": false,
+          "overlapPixelsWithGt": 0,
+          "bboxIoUWithGt": 0.0,
+          "centroidDistToGtPx": 55.66
+        },
+        {
+          "regionId": 4,
+          "pixelCount": 7,
+          "bbox": [
+            467,
+            379,
+            470,
+            382
+          ],
+          "centroid": [
+            467.71,
+            380.0
+          ],
+          "overlapsGt": false,
+          "overlapPixelsWithGt": 0,
+          "bboxIoUWithGt": 0.0,
+          "centroidDistToGtPx": 239.91
+        }
+      ]
+    }
+  },
+  "comparisonSummary": {
+    "winningMapping": "Experiment B (VV, VH, VV-VH)",
+    "rationale": "Experiment B achieved higher BBox IoU (0.4605 vs 0.3740) and closer centroid distance (2.58px vs 6.08px).",
+    "expA": {
+      "oilPixels": 761,
+      "oilRegions": 2,
+      "overallBbox": [
+        126,
+        108,
+        274,
+        278
+      ],
+      "mainRegionBbox": [
+        245,
+        228,
+        275,
+        279
+      ],
+      "mainRegionBboxIoU": 0.374,
+      "mainRegionCentroidDist": 6.08,
+      "overlapsGt": true
+    },
+    "expB": {
+      "oilPixels": 236,
+      "oilRegions": 4,
+      "overallBbox": [
+        128,
+        108,
+        469,
+        381
+      ],
+      "mainRegionBbox": [
+        254,
+        246,
+        271,
+        272
+      ],
+      "mainRegionBboxIoU": 0.4605,
+      "mainRegionCentroidDist": 2.58,
+      "overlapsGt": true
+    }
+  },
+  "artifacts": {
+    "resultJson": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\validation_result.json",
+    "predictedMask": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\predicted_mask.png",
+    "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\overlay.png",
+    "comparisonPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\comparison.png",
+    "expAMask": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\predicted_mask_exp_a.png",
+    "expBMask": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\predicted_mask_exp_b.png",
+    "expAOverlay": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\overlay_exp_a.png",
+    "expBOverlay": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\overlay_exp_b.png"
+  }
+}

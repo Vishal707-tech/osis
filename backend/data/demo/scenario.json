@@ -1,0 +1,90 @@
+{
+    "id": "demo-arabian-sea",
+    "name": "Arabian Sea synthetic SAR and AIS exercise",
+    "source": "synthetic_demo",
+    "acquiredAt": "2026-09-04T06:00:00Z",
+    "previousClearAt": "2026-09-03T21:00:00Z",
+    "firstPositiveAt": "2026-09-04T00:00:00Z",
+    "bbox": [
+        72.40,
+        15.20,
+        72.50,
+        15.28
+    ],
+    "width": 96,
+    "height": 80,
+    "polarization": "VV",
+    "orbit": "synthetic descending",
+    "environment": {
+        "source": "synthetic_demo_constant_field",
+        "current_u_ms": 0.12,
+        "current_v_ms": 0.04,
+        "wind_u_ms": 3,
+        "wind_v_ms": 1,
+        "wave_height_m": 0.8,
+        "leeway": 0.03,
+        "velocity_uncertainty_ms": 0.06
+    },
+    "vessels": [
+        {
+            "mmsi": "000000001",
+            "name": "DEMO Tanker Alpha",
+            "type": "Tanker",
+            "start": [
+                72.337,
+                15.222
+            ],
+            "velocity_deg_h": [
+                0.012,
+                0
+            ],
+            "gapHours": [
+                -8,
+                -6
+            ]
+        },
+        {
+            "mmsi": "000000002",
+            "name": "DEMO Cargo Beta",
+            "type": "Cargo",
+            "start": [
+                72.320,
+                15.270
+            ],
+            "velocity_deg_h": [
+                0.014,
+                0
+            ],
+            "gapHours": null
+        },
+        {
+            "mmsi": "000000003",
+            "name": "DEMO Service Gamma",
+            "type": "Service",
+            "start": [
+                72.400,
+                15.165
+            ],
+            "velocity_deg_h": [
+                0.003,
+                0.005
+            ],
+            "gapHours": null
+        },
+        {
+            "mmsi": "000000004",
+            "name": "DEMO Distant Delta",
+            "type": "Cargo",
+            "start": [
+                73.500,
+                16.200
+            ],
+            "velocity_deg_h": [
+                0.01,
+                0
+            ],
+            "gapHours": null
+        }
+    ],
+    "disclaimer": "All imagery, observations, environmental vectors, identities and AIS positions in this exercise are synthetic. MMSIs beginning 000 are demonstration identifiers, not vessel identities."
+}

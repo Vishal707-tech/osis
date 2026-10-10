@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "name": "Sentinel-1 Dark Slick Candidates",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "metadata": {
+    "sceneId": "S1A_IW_GRDH_1SDV_20240619T004837_20240619T004902_054385_069DE8_E3DA_COG.SAFE",
+    "acquisitionTime": "2024-06-19T00:48:37Z",
+    "detector": "Adaptive Sea Clutter Damping Baseline",
+    "candidateCount": 0,
+    "oceanValidPercentage": 31.18,
+    "generatedAt": "2026-09-07T12:43:50.802Z",
+    "disclaimer": "EXPERIMENTAL CANDIDATES ONLY - NOT CONFIRMED OIL SPILLS"
+  },
+  "features": []
+}

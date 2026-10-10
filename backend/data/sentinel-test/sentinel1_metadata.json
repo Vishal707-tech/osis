@@ -1,0 +1,36 @@
+{
+  "sceneId": "S1A_IW_GRDH_1SDV_20240619T004837_20240619T004902_054385_069DE8_E3DA_COG.SAFE",
+  "acquisitionTime": "2024-06-19T00:48:37Z",
+  "polarization": "VV",
+  "requestedBbox": {
+    "minLongitude": 74.4,
+    "minLatitude": 13.98,
+    "maxLongitude": 74.48,
+    "maxLatitude": 14.06,
+    "crs": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+  },
+  "outputDimensions": {
+    "width": 512,
+    "height": 512,
+    "units": "pixels"
+  },
+  "rasterDetails": {
+    "bitsPerSample": 32,
+    "samplesPerPixel": 1,
+    "sampleFormat": "FLOAT32 (IEEE 32-bit Floating Point)",
+    "endianness": "Big-endian",
+    "coordinateReferenceSystem": "EPSG:4326 / WGS84 (OGC CRS84)",
+    "fileSizeBytes": 278004
+  },
+  "outputFile": {
+    "fileName": "sentinel1_vv_20240619.tif",
+    "relativePath": "backend/data/sentinel-test/sentinel1_vv_20240619.tif",
+    "absolutePath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\sentinel1_vv_20240619.tif"
+  },
+  "apiDetails": {
+    "endpoint": "https://sh.dataspace.copernicus.eu/api/v1/process",
+    "responseStatus": 200,
+    "contentType": "image/tiff",
+    "retrievedAt": "2026-09-07T11:03:51.088Z"
+  }
+}

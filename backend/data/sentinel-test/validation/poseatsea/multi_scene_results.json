@@ -1,0 +1,455 @@
+{
+  "experiment": "POSEatSea Multi-Scene Zero-Shot Validation (DARTIS_2019)",
+  "timestamp": "2026-09-07T18:09:28Z",
+  "model": {
+    "checkpoint": "best_sar_model.pth",
+    "architecture": "U-Net with MiT-B2 encoder",
+    "inputMapping": "[VV, VH, VV-VH]",
+    "device": "cuda",
+    "gpuName": "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+  },
+  "aggregateMetrics": {
+    "totalScenesEvaluated": 6,
+    "oilScenesCount": 4,
+    "nonOilScenesCount": 2,
+    "oilDetectionRatePercent": 75.0,
+    "oilScenesDetected": "3 / 4",
+    "meanBboxIoU": 0.3731,
+    "medianBboxIoU": 0.4605,
+    "meanCentroidDistPx": 12.86,
+    "medianCentroidDistPx": 6.87,
+    "falseOilDetectionsOnNonOil": 0
+  },
+  "scenes": [
+    {
+      "sceneId": "ow-0002",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "inferenceTimeMs": 44.28,
+      "status": "POSITIVE DETECTION",
+      "oilDetected": true,
+      "predictedOilPixels": 236,
+      "predictedOilRegions": 4,
+      "overallOilBbox": [
+        128,
+        108,
+        469,
+        381
+      ],
+      "overallOilCentroid": [
+        241.79,
+        233.09
+      ],
+      "mainRegion": {
+        "regionId": 2,
+        "pixelCount": 172,
+        "bbox": [
+          254,
+          246,
+          271,
+          272
+        ],
+        "centroid": [
+          262.17,
+          257.77
+        ]
+      },
+      "gtObjects": [
+        {
+          "id": 1,
+          "name": "oil",
+          "rasterBbox": [
+            253,
+            237,
+            267,
+            282
+          ],
+          "rasterCentroid": [
+            260.0,
+            259.5
+          ],
+          "rasterArea": 630
+        }
+      ],
+      "overlapsGt": true,
+      "mainRegionOverlapsGt": true,
+      "bestBboxIoU": 0.4605,
+      "bestCentroidDistPx": 2.78,
+      "classPixelCounts": {
+        "Sea Surface": 261211,
+        "Oil Spill": 236,
+        "Look-alike": 0,
+        "Ship": 697,
+        "Land": 0
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\ow-0002_overlay.png",
+      "notes": "Oil slick detected (IoU=0.4605)"
+    },
+    {
+      "sceneId": "ow-0004",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "inferenceTimeMs": 44.8,
+      "status": "POSITIVE DETECTION",
+      "oilDetected": true,
+      "predictedOilPixels": 1779,
+      "predictedOilRegions": 5,
+      "overallOilBbox": [
+        207,
+        144,
+        391,
+        300
+      ],
+      "overallOilCentroid": [
+        267.07,
+        239.79
+      ],
+      "mainRegion": {
+        "regionId": 3,
+        "pixelCount": 1459,
+        "bbox": [
+          209,
+          203,
+          303,
+          286
+        ],
+        "centroid": [
+          256.85,
+          248.09
+        ]
+      },
+      "gtObjects": [
+        {
+          "id": 1,
+          "name": "oil",
+          "rasterBbox": [
+            278,
+            257,
+            284,
+            271
+          ],
+          "rasterCentroid": [
+            281.0,
+            264.0
+          ],
+          "rasterArea": 84
+        },
+        {
+          "id": 2,
+          "name": "oil",
+          "rasterBbox": [
+            433,
+            24,
+            435,
+            95
+          ],
+          "rasterCentroid": [
+            434.0,
+            59.5
+          ],
+          "rasterArea": 142
+        },
+        {
+          "id": 3,
+          "name": "oil",
+          "rasterBbox": [
+            253,
+            251,
+            259,
+            259
+          ],
+          "rasterCentroid": [
+            256.0,
+            255.0
+          ],
+          "rasterArea": 48
+        }
+      ],
+      "overlapsGt": true,
+      "mainRegionOverlapsGt": true,
+      "bestBboxIoU": 0.0108,
+      "bestCentroidDistPx": 28.92,
+      "classPixelCounts": {
+        "Sea Surface": 260334,
+        "Oil Spill": 1779,
+        "Look-alike": 31,
+        "Ship": 0,
+        "Land": 0
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\ow-0004_overlay.png",
+      "notes": "Oil slick detected (IoU=0.0108)"
+    },
+    {
+      "sceneId": "ow-0006",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "inferenceTimeMs": 46.5,
+      "status": "POSITIVE DETECTION",
+      "oilDetected": true,
+      "predictedOilPixels": 3924,
+      "predictedOilRegions": 12,
+      "overallOilBbox": [
+        6,
+        103,
+        355,
+        420
+      ],
+      "overallOilCentroid": [
+        227.81,
+        243.11
+      ],
+      "mainRegion": {
+        "regionId": 2,
+        "pixelCount": 1520,
+        "bbox": [
+          231,
+          103,
+          320,
+          153
+        ],
+        "centroid": [
+          271.86,
+          129.94
+        ]
+      },
+      "gtObjects": [
+        {
+          "id": 1,
+          "name": "oil",
+          "rasterBbox": [
+            227,
+            86,
+            321,
+            178
+          ],
+          "rasterCentroid": [
+            274.0,
+            132.0
+          ],
+          "rasterArea": 8648
+        },
+        {
+          "id": 2,
+          "name": "oil",
+          "rasterBbox": [
+            152,
+            229,
+            234,
+            429
+          ],
+          "rasterCentroid": [
+            193.0,
+            329.0
+          ],
+          "rasterArea": 16400
+        },
+        {
+          "id": 3,
+          "name": "oil",
+          "rasterBbox": [
+            228,
+            167,
+            263,
+            213
+          ],
+          "rasterCentroid": [
+            245.5,
+            190.0
+          ],
+          "rasterArea": 1610
+        },
+        {
+          "id": 4,
+          "name": "oil",
+          "rasterBbox": [
+            350,
+            163,
+            376,
+            189
+          ],
+          "rasterCentroid": [
+            363.0,
+            176.0
+          ],
+          "rasterArea": 676
+        }
+      ],
+      "overlapsGt": true,
+      "mainRegionOverlapsGt": true,
+      "bestBboxIoU": 0.6481,
+      "bestCentroidDistPx": 6.87,
+      "classPixelCounts": {
+        "Sea Surface": 258000,
+        "Oil Spill": 3924,
+        "Look-alike": 220,
+        "Ship": 0,
+        "Land": 0
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\ow-0006_overlay.png",
+      "notes": "Oil slick detected (IoU=0.6481)"
+    },
+    {
+      "sceneId": "oc-0001",
+      "type": "oil",
+      "category": "oc (oil/coast)",
+      "inferenceTimeMs": 45.36,
+      "status": "MISSED DETECTION",
+      "oilDetected": false,
+      "predictedOilPixels": 0,
+      "predictedOilRegions": 0,
+      "overallOilBbox": null,
+      "overallOilCentroid": null,
+      "mainRegion": null,
+      "gtObjects": [
+        {
+          "id": 1,
+          "name": "oil",
+          "rasterBbox": [
+            267,
+            196,
+            323,
+            225
+          ],
+          "rasterCentroid": [
+            295.0,
+            210.5
+          ],
+          "rasterArea": 1624
+        },
+        {
+          "id": 2,
+          "name": "oil",
+          "rasterBbox": [
+            305,
+            324,
+            357,
+            345
+          ],
+          "rasterCentroid": [
+            331.0,
+            334.5
+          ],
+          "rasterArea": 1092
+        },
+        {
+          "id": 3,
+          "name": "oil",
+          "rasterBbox": [
+            264,
+            247,
+            347,
+            296
+          ],
+          "rasterCentroid": [
+            305.5,
+            271.5
+          ],
+          "rasterArea": 4067
+        },
+        {
+          "id": 4,
+          "name": "oil",
+          "rasterBbox": [
+            287,
+            243,
+            340,
+            254
+          ],
+          "rasterCentroid": [
+            313.5,
+            248.5
+          ],
+          "rasterArea": 583
+        },
+        {
+          "id": 5,
+          "name": "oil",
+          "rasterBbox": [
+            450,
+            187,
+            488,
+            214
+          ],
+          "rasterCentroid": [
+            469.0,
+            200.5
+          ],
+          "rasterArea": 1026
+        }
+      ],
+      "overlapsGt": false,
+      "mainRegionOverlapsGt": false,
+      "bestBboxIoU": 0.0,
+      "bestCentroidDistPx": null,
+      "classPixelCounts": {
+        "Sea Surface": 254773,
+        "Oil Spill": 0,
+        "Look-alike": 4157,
+        "Ship": 15,
+        "Land": 3199
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\oc-0001_overlay.png",
+      "notes": "Coastal oil masked as Look-alike (Class 2) and Land (Class 4)"
+    },
+    {
+      "sceneId": "nw-0001",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "inferenceTimeMs": 44.59,
+      "status": "CORRECT REJECTION",
+      "oilDetected": false,
+      "predictedOilPixels": 0,
+      "predictedOilRegions": 0,
+      "overallOilBbox": null,
+      "overallOilCentroid": null,
+      "mainRegion": null,
+      "gtObjects": [],
+      "overlapsGt": false,
+      "mainRegionOverlapsGt": false,
+      "bestBboxIoU": 0.0,
+      "bestCentroidDistPx": null,
+      "classPixelCounts": {
+        "Sea Surface": 260282,
+        "Oil Spill": 0,
+        "Look-alike": 1862,
+        "Ship": 0,
+        "Land": 0
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\nw-0001_overlay.png",
+      "notes": "Clean suppression (0 oil px, 1862 lookalike px)"
+    },
+    {
+      "sceneId": "nw-0002",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "inferenceTimeMs": 44.52,
+      "status": "CORRECT REJECTION",
+      "oilDetected": false,
+      "predictedOilPixels": 0,
+      "predictedOilRegions": 0,
+      "overallOilBbox": null,
+      "overallOilCentroid": null,
+      "mainRegion": null,
+      "gtObjects": [],
+      "overlapsGt": false,
+      "mainRegionOverlapsGt": false,
+      "bestBboxIoU": 0.0,
+      "bestCentroidDistPx": null,
+      "classPixelCounts": {
+        "Sea Surface": 260509,
+        "Oil Spill": 0,
+        "Look-alike": 1635,
+        "Ship": 0,
+        "Land": 0
+      },
+      "overlayPath": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay\\nw-0002_overlay.png",
+      "notes": "Clean suppression (0 oil px, 1635 lookalike px)"
+    }
+  ],
+  "artifacts": {
+    "resultsJson": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_results.json",
+    "summaryCsv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_summary.csv",
+    "overlayDir": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_overlay",
+    "overviewGrid": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\poseatsea\\multi_scene_grid.png"
+  }
+}

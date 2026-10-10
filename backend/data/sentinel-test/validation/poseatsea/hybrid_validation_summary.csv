@@ -1,0 +1,7 @@
+Scene_ID,Type,Category,Spill_Detected,Final_Spills_Count,Top_Confidence,Overlaps_GT,Best_Candidate_BBox_IoU,Best_Candidate_Centroid_Dist_Px,Best_Merged_Spill_BBox_IoU,Best_Merged_Spill_Centroid_Dist_Px,Classical_Cands,POSEatSea_Oil_Px,Hybrid_Retained_Cands,Classical_Time_ms,POSEatSea_Time_ms,Total_Hybrid_Time_ms,Failure_Reason
+ow-0002,oil,ow (oil/water),True,2,0.856,True,0.0313,14.92,0.0313,13.66,20,236,2,59.99,307.44,382.79,None
+ow-0004,oil,ow (oil/water),True,3,0.962,True,0.4045,2.7,0.0108,10.5,21,1779,5,59.16,70.74,150.07,None
+ow-0006,oil,ow (oil/water),True,7,0.969,True,0.0888,7.81,0.6481,4.27,31,3924,13,82.92,67.96,194.02,None
+oc-0001,oil,oc (oil/coast),True,4,0.615,True,0.0436,12.04,0.0436,13.45,8,0,4,45.94,65.34,122.46,None
+nw-0001,look-alike,nw (no_oil/water),False,0,0.0,N/A,N/A,N/A,N/A,N/A,44,0,0,106.44,67.3,201.4,None
+nw-0002,look-alike,nw (no_oil/water),False,0,0.0,N/A,N/A,N/A,N/A,N/A,33,0,0,90.21,67.4,177.79,None

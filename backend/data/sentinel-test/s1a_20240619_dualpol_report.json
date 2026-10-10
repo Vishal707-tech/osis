@@ -1,0 +1,107 @@
+{
+  "pipeline": "Sentinel-1 Dual-Polarization (VV + VH) Retrieval & Preprocessing",
+  "timestamp": "2026-09-07T11:18:55.077Z",
+  "scene": {
+    "id": "S1A_IW_GRDH_1SDV_20240619T004837_20240619T004902_054385_069DE8_E3DA_COG.SAFE",
+    "acquisitionTime": "2024-06-19T00:48:37Z",
+    "platform": "SENTINEL-1A",
+    "sensorMode": "IW",
+    "orbitDirection": "descending"
+  },
+  "aoi": {
+    "boundingBox": [
+      74.7,
+      13.2,
+      74.78,
+      13.28
+    ],
+    "crs": "EPSG:4326 / WGS84 (OGC CRS84)",
+    "pixelScale": {
+      "xDeg": 0.00015624999999999667,
+      "yDeg": 0.00015625000000000014
+    },
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "estimatedResolutionMeters": 17.3,
+    "description": "Arabian Sea coastal transit corridor off Karnataka (comfortably inside SAR swath)"
+  },
+  "coverage": {
+    "vvValidPercentage": 99.97,
+    "vhValidPercentage": 90.31,
+    "status": "EXCELLENT_COVERAGE"
+  },
+  "statistics": {
+    "vv": {
+      "polarization": "VV",
+      "validPercentage": 99.97,
+      "linear": {
+        "min": 0.0000010470542974871933,
+        "max": 120.89678955078125,
+        "mean": 0.15000038505702618,
+        "stdDev": 0.5688334423065394
+      },
+      "decibel": {
+        "min": -59.8,
+        "max": 20.82,
+        "mean": -12.59,
+        "stdDev": 6.9,
+        "median": -10.65,
+        "p1": -26.39,
+        "p2": -25.06,
+        "p5": -23.31,
+        "p95": -3.44,
+        "p98": -2.1,
+        "p99": -1.06
+      }
+    },
+    "vh": {
+      "polarization": "VH",
+      "validPercentage": 90.31,
+      "linear": {
+        "min": 0.00002621427847770974,
+        "max": 5.978708267211914,
+        "mean": 0.031232161612105545,
+        "stdDev": 0.0391830440312645
+      },
+      "decibel": {
+        "min": -45.81,
+        "max": 7.77,
+        "mean": -20.02,
+        "stdDev": 8.69,
+        "median": -16.27,
+        "p1": -41.53,
+        "p2": -40.57,
+        "p5": -35.95,
+        "p95": -10.24,
+        "p98": -9.19,
+        "p99": -8.48
+      }
+    },
+    "crossPolarizationRatio": {
+      "description": "VV / VH dB difference",
+      "meanDifferenceDb": 7.43
+    }
+  },
+  "generatedFiles": {
+    "rawGeoTiffs": {
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vv.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vh.tif"
+    },
+    "processedDbGeoTiffs": {
+      "vv": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vv_db.tif",
+      "vh": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vh_db.tif"
+    },
+    "visualizations": {
+      "vvPreviewPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vv_preview.png",
+      "vhPreviewPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_vh_preview.png",
+      "compositeRgbPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_composite_preview.png"
+    },
+    "reportJson": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\s1a_20240619_dualpol_report.json"
+  },
+  "suitabilityAssessment": {
+    "isSuitableForDetection": true,
+    "rationale": "AOI exhibits 99.97% valid SAR returns with zero swath edge cutoff. Both co-polarization (VV) and cross-polarization (VH) channels provide high dynamic range and consistent ocean surface clutter, making it fully suitable for dark formation extraction in the next stage."
+  }
+}

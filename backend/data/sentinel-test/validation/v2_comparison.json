@@ -1,0 +1,117 @@
+{
+  "testName": "SAR Dark-Slick Classical-CV V2 Experiments Benchmark",
+  "timestamp": "2026-09-07T13:17:53.774Z",
+  "benchmarkCase": {
+    "dataset": "DARTIS_2019 (ESSD 2025)",
+    "patch": "S1_20190104_155638_155818_VV_2",
+    "groundTruthBoxPatch": [
+      309,
+      282,
+      340,
+      342
+    ],
+    "groundTruthAreaPatch": 1860,
+    "groundTruthCentroidPatch": {
+      "x": 324.5,
+      "y": 312
+    }
+  },
+  "experiments": [
+    {
+      "name": "BASELINE",
+      "description": "Original single-scale detector with aggressive 3x3 opening and 3x3 closing",
+      "localWindow": "Radius = 25 px (~880m diameter)",
+      "morphology": "3x3 Opening (erosion then dilation) followed by 3x3 Closing",
+      "rawDarkPixels": 7908,
+      "candidatesBeforeFilter": 0,
+      "candidatesAfterFilter": 0,
+      "largestCandidateArea": 0,
+      "overlapsGroundTruth": false,
+      "bestCandidateId": null,
+      "bestIoU": 0,
+      "candidateBboxPatch": null,
+      "candidateCentroidPatch": null,
+      "centroidDistPx": null,
+      "outcome": "MISSED DETECTION",
+      "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\baseline_overlay.png"
+    },
+    {
+      "name": "V2_MINIMAL_MORPHOLOGY",
+      "description": "Removed aggressive 3x3 erosion; retained 3x3 closing to bridge small gaps",
+      "localWindow": "Radius = 25 px (~880m diameter)",
+      "morphology": "3x3 Closing only (dilation then erosion)",
+      "rawDarkPixels": 7908,
+      "candidatesBeforeFilter": 4961,
+      "candidatesAfterFilter": 98,
+      "largestCandidateArea": 66,
+      "overlapsGroundTruth": true,
+      "bestCandidateId": "DSC-042",
+      "bestIoU": 0.1398,
+      "candidateBboxPatch": [
+        312,
+        317,
+        325,
+        337
+      ],
+      "candidateCentroidPatch": {
+        "x": 318.62,
+        "y": 327.26
+      },
+      "centroidDistPx": 16.36,
+      "outcome": "POSITIVE DETECTION (SLICK RECOVERED)",
+      "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\v2_morphology_overlay.png"
+    },
+    {
+      "name": "V2_MULTI_SCALE",
+      "description": "Multi-scale adaptive anomaly detection across narrow (7px), medium (15px), and broad (25px) windows",
+      "localWindow": "R in {7 px (~240m), 15 px (~520m), 25 px (~880m)}",
+      "morphology": "Multi-scale union + 3x3 Closing",
+      "rawDarkPixels": 9702,
+      "candidatesBeforeFilter": 5981,
+      "candidatesAfterFilter": 119,
+      "largestCandidateArea": 66,
+      "overlapsGroundTruth": true,
+      "bestCandidateId": "DSC-049",
+      "bestIoU": 0.1398,
+      "candidateBboxPatch": [
+        312,
+        317,
+        325,
+        337
+      ],
+      "candidateCentroidPatch": {
+        "x": 318.62,
+        "y": 327.26
+      },
+      "centroidDistPx": 16.36,
+      "outcome": "POSITIVE DETECTION (SLICK RECOVERED)",
+      "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\v2_multiscale_overlay.png"
+    },
+    {
+      "name": "V2_DIRECTIONAL",
+      "description": "Oriented linear structuring elements across 4 angles (0°, 45°, 90°, 135°) to preserve elongated slicks",
+      "localWindow": "Radius = 25 px (~880m diameter)",
+      "morphology": "Directional Closing with 5-pixel kernels at 0°, 45°, 90°, 135°",
+      "rawDarkPixels": 7908,
+      "candidatesBeforeFilter": 2893,
+      "candidatesAfterFilter": 409,
+      "largestCandidateArea": 154,
+      "overlapsGroundTruth": true,
+      "bestCandidateId": "DSC-187",
+      "bestIoU": 0.2742,
+      "candidateBboxPatch": [
+        310,
+        311,
+        327,
+        341
+      ],
+      "candidateCentroidPatch": {
+        "x": 318.23,
+        "y": 327.59
+      },
+      "centroidDistPx": 16.8,
+      "outcome": "POSITIVE DETECTION (SLICK RECOVERED)",
+      "overlayPng": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\validation\\v2_directional_overlay.png"
+    }
+  ]
+}

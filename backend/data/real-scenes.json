@@ -1,0 +1,31 @@
+[
+  {
+    "id": "s1a-20240619-karnataka",
+    "name": "Sentinel-1A · Karnataka · 19 June 2024 (archived)",
+    "mode": "REAL",
+    "source": "archived_sentinel1",
+    "productId": "S1A_IW_GRDH_1SDV_20240619T004837_20240619T004902_054385_069DE8_E3DA_COG.SAFE",
+    "acquiredAt": "2024-06-19T00:48:37Z",
+    "bbox": [74.7, 13.2, 74.78, 13.28],
+    "rasterUnits": "db",
+    "polarization": ["VV", "VH"],
+    "vv": "sentinel-test/s1a_20240619_vv_db.tif",
+    "vh": "sentinel-test/s1a_20240619_vh_db.tif"
+  },
+  {
+    "id": "s1d-20261005-arabian-sea",
+    "name": "Sentinel-1D · Arabian Sea · 5 October 2026",
+    "mode": "REAL",
+    "source": "archived_sentinel1",
+    "productId": "S1D_IW_GRDH_1SDV_20261005T011017_20261005T011042_004873_0092A1_0488_COG.SAFE",
+    "acquiredAt": "2026-10-05T01:10:17Z",
+    "bbox": [64.0, 14.0, 66.0, 16.0],
+    "rasterUnits": "db",
+    "polarization": ["VV", "VH"],
+    "vv": "scenes/S1D_IW_GRDH_1SDV_20261005T011017_20261005T011042_004873_0092A1_0488_COG.SAFE/vv.tif",
+    "vh": "scenes/S1D_IW_GRDH_1SDV_20261005T011017_20261005T011042_004873_0092A1_0488_COG.SAFE/vh.tif",
+    "environment": {
+      "current": "environment/arabian_sea/cmems_arabian_sea_20261005.nc"
+    }
+  }
+]

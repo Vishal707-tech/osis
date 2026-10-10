@@ -1,0 +1,944 @@
+{
+  "experiment": "Classical Candidate Detector vs. POSEatSea Benchmark",
+  "timestamp": "2026-09-07T18:14:57Z",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "cuda": true
+  },
+  "scenes": [
+    {
+      "sceneId": "ow-0002",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "gtBoundingBoxes": [
+        [
+          253,
+          237,
+          267,
+          282
+        ]
+      ],
+      "classical": {
+        "totalClustersBeforeFilter": 23,
+        "retainedCandidates": 9,
+        "highestScore": 0.6892,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.0313,
+        "bestCentroidDistPx": 14.92,
+        "executionTimeMs": 53.21,
+        "topCandidates": [
+          {
+            "clusterId": 718,
+            "area": 17,
+            "bbox": [
+              126,
+              108,
+              132,
+              118
+            ],
+            "centroid": [
+              129.24,
+              112.41
+            ],
+            "vvDampingDb": 5.91,
+            "vhDampingDb": 585.94,
+            "elongation": 2.85,
+            "boundaryGradient": 13.3,
+            "heuristicScore": 0.6892,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 196.81
+          },
+          {
+            "clusterId": 1684,
+            "area": 12,
+            "bbox": [
+              251,
+              245,
+              258,
+              249
+            ],
+            "centroid": [
+              253.83,
+              245.92
+            ],
+            "vvDampingDb": 6.8,
+            "vhDampingDb": 2489.93,
+            "elongation": 2.15,
+            "boundaryGradient": 31.85,
+            "heuristicScore": 0.6739,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0313,
+            "centroidDistPx": 14.92
+          },
+          {
+            "clusterId": 1402,
+            "area": 10,
+            "bbox": [
+              233,
+              203,
+              240,
+              207
+            ],
+            "centroid": [
+              236.3,
+              204.1
+            ],
+            "vvDampingDb": 4.82,
+            "vhDampingDb": 2991.24,
+            "elongation": 2.23,
+            "boundaryGradient": 9.59,
+            "heuristicScore": 0.5786,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 60.26
+          },
+          {
+            "clusterId": 1,
+            "area": 11,
+            "bbox": [
+              14,
+              0,
+              17,
+              5
+            ],
+            "centroid": [
+              14.64,
+              2.18
+            ],
+            "vvDampingDb": 4.51,
+            "vhDampingDb": 906.53,
+            "elongation": 2.4,
+            "boundaryGradient": 11.19,
+            "heuristicScore": 0.5759,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 355.55
+          },
+          {
+            "clusterId": 1934,
+            "area": 10,
+            "bbox": [
+              182,
+              279,
+              189,
+              283
+            ],
+            "centroid": [
+              184.7,
+              280.6
+            ],
+            "vvDampingDb": 4.14,
+            "vhDampingDb": 2987.38,
+            "elongation": 2.38,
+            "boundaryGradient": 8.77,
+            "heuristicScore": 0.5484,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 78.2
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 236,
+        "oilRegionsCount": 4,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.4605,
+        "bestCentroidDistPx": 2.78,
+        "classDistribution": {
+          "Sea Surface": 261211,
+          "Oil Spill": 236,
+          "Look-alike": 0,
+          "Ship": 697,
+          "Land": 0
+        },
+        "executionTimeMs": 294.4
+      }
+    },
+    {
+      "sceneId": "ow-0004",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "gtBoundingBoxes": [
+        [
+          278,
+          257,
+          284,
+          271
+        ],
+        [
+          433,
+          24,
+          435,
+          95
+        ],
+        [
+          253,
+          251,
+          259,
+          259
+        ]
+      ],
+      "classical": {
+        "totalClustersBeforeFilter": 23,
+        "retainedCandidates": 8,
+        "highestScore": 0.7735,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.4045,
+        "bestCentroidDistPx": 2.7,
+        "executionTimeMs": 47.21,
+        "topCandidates": [
+          {
+            "clusterId": 1480,
+            "area": 27,
+            "bbox": [
+              249,
+              250,
+              260,
+              257
+            ],
+            "centroid": [
+              254.37,
+              252.85
+            ],
+            "vvDampingDb": 377.75,
+            "vhDampingDb": 2952.47,
+            "elongation": 2.7,
+            "boundaryGradient": 9313.25,
+            "heuristicScore": 0.7735,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.4045,
+            "centroidDistPx": 2.7
+          },
+          {
+            "clusterId": 417,
+            "area": 25,
+            "bbox": [
+              432,
+              72,
+              438,
+              83
+            ],
+            "centroid": [
+              434.64,
+              76.76
+            ],
+            "vvDampingDb": 802.63,
+            "vhDampingDb": 3986.88,
+            "elongation": 2.07,
+            "boundaryGradient": 9536.34,
+            "heuristicScore": 0.7246,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.1183,
+            "centroidDistPx": 17.27
+          },
+          {
+            "clusterId": 1515,
+            "area": 31,
+            "bbox": [
+              276,
+              257,
+              285,
+              264
+            ],
+            "centroid": [
+              280.26,
+              259.74
+            ],
+            "vvDampingDb": 972.36,
+            "vhDampingDb": 2892.55,
+            "elongation": 1.32,
+            "boundaryGradient": 8163.95,
+            "heuristicScore": 0.6479,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.4,
+            "centroidDistPx": 4.32
+          },
+          {
+            "clusterId": 1395,
+            "area": 19,
+            "bbox": [
+              206,
+              234,
+              217,
+              238
+            ],
+            "centroid": [
+              211.0,
+              235.11
+            ],
+            "vvDampingDb": 4.84,
+            "vhDampingDb": 4198.57,
+            "elongation": 2.78,
+            "boundaryGradient": 11.5,
+            "heuristicScore": 0.6387,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 49.2
+          },
+          {
+            "clusterId": 1691,
+            "area": 20,
+            "bbox": [
+              302,
+              288,
+              313,
+              295
+            ],
+            "centroid": [
+              306.65,
+              291.2
+            ],
+            "vvDampingDb": 4.06,
+            "vhDampingDb": 497.76,
+            "elongation": 2.65,
+            "boundaryGradient": 9.42,
+            "heuristicScore": 0.59,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 37.39
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 1779,
+        "oilRegionsCount": 5,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.0108,
+        "bestCentroidDistPx": 28.92,
+        "classDistribution": {
+          "Sea Surface": 260334,
+          "Oil Spill": 1779,
+          "Look-alike": 31,
+          "Ship": 0,
+          "Land": 0
+        },
+        "executionTimeMs": 45.53
+      }
+    },
+    {
+      "sceneId": "ow-0006",
+      "type": "oil",
+      "category": "ow (oil/water)",
+      "gtBoundingBoxes": [
+        [
+          227,
+          86,
+          321,
+          178
+        ],
+        [
+          152,
+          229,
+          234,
+          429
+        ],
+        [
+          228,
+          167,
+          263,
+          213
+        ],
+        [
+          350,
+          163,
+          376,
+          189
+        ]
+      ],
+      "classical": {
+        "totalClustersBeforeFilter": 32,
+        "retainedCandidates": 28,
+        "highestScore": 0.8058,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.0888,
+        "bestCentroidDistPx": 7.81,
+        "executionTimeMs": 66.61,
+        "topCandidates": [
+          {
+            "clusterId": 516,
+            "area": 10,
+            "bbox": [
+              129,
+              88,
+              132,
+              95
+            ],
+            "centroid": [
+              129.6,
+              91.3
+            ],
+            "vvDampingDb": 5.92,
+            "vhDampingDb": -0.2,
+            "elongation": 3.55,
+            "boundaryGradient": 17.37,
+            "heuristicScore": 0.8058,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 150.03
+          },
+          {
+            "clusterId": 1663,
+            "area": 20,
+            "bbox": [
+              145,
+              295,
+              151,
+              301
+            ],
+            "centroid": [
+              147.25,
+              297.65
+            ],
+            "vvDampingDb": 2997.11,
+            "vhDampingDb": 2987.9,
+            "elongation": 1.58,
+            "boundaryGradient": 18958.7,
+            "heuristicScore": 0.8026,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 55.46
+          },
+          {
+            "clusterId": 2250,
+            "area": 36,
+            "bbox": [
+              178,
+              398,
+              191,
+              409
+            ],
+            "centroid": [
+              184.75,
+              403.0
+            ],
+            "vvDampingDb": 1947.03,
+            "vhDampingDb": 3047.12,
+            "elongation": 3.5,
+            "boundaryGradient": 15332.89,
+            "heuristicScore": 0.7889,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0087,
+            "centroidDistPx": 74.46
+          },
+          {
+            "clusterId": 1070,
+            "area": 30,
+            "bbox": [
+              229,
+              187,
+              242,
+              198
+            ],
+            "centroid": [
+              235.2,
+              191.0
+            ],
+            "vvDampingDb": 341.03,
+            "vhDampingDb": 998.86,
+            "elongation": 3.69,
+            "boundaryGradient": 11371.6,
+            "heuristicScore": 0.7825,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0888,
+            "centroidDistPx": 10.35
+          },
+          {
+            "clusterId": 1128,
+            "area": 30,
+            "bbox": [
+              256,
+              197,
+              267,
+              204
+            ],
+            "centroid": [
+              261.03,
+              200.8
+            ],
+            "vvDampingDb": 339.23,
+            "vhDampingDb": 4652.81,
+            "elongation": 2.68,
+            "boundaryGradient": 6619.76,
+            "heuristicScore": 0.7825,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0299,
+            "centroidDistPx": 18.92
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 3924,
+        "oilRegionsCount": 12,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.6481,
+        "bestCentroidDistPx": 6.87,
+        "classDistribution": {
+          "Sea Surface": 258000,
+          "Oil Spill": 3924,
+          "Look-alike": 220,
+          "Ship": 0,
+          "Land": 0
+        },
+        "executionTimeMs": 45.42
+      }
+    },
+    {
+      "sceneId": "oc-0001",
+      "type": "oil",
+      "category": "oc (oil/coast)",
+      "gtBoundingBoxes": [
+        [
+          267,
+          196,
+          323,
+          225
+        ],
+        [
+          305,
+          324,
+          357,
+          345
+        ],
+        [
+          264,
+          247,
+          347,
+          296
+        ],
+        [
+          287,
+          243,
+          340,
+          254
+        ],
+        [
+          450,
+          187,
+          488,
+          214
+        ]
+      ],
+      "classical": {
+        "totalClustersBeforeFilter": 16,
+        "retainedCandidates": 8,
+        "highestScore": 0.6007,
+        "overlapsGt": true,
+        "bestBboxIoU": 0.0436,
+        "bestCentroidDistPx": 12.04,
+        "executionTimeMs": 36.59,
+        "topCandidates": [
+          {
+            "clusterId": 1194,
+            "area": 19,
+            "bbox": [
+              307,
+              226,
+              312,
+              236
+            ],
+            "centroid": [
+              308.89,
+              231.47
+            ],
+            "vvDampingDb": 2.8,
+            "vhDampingDb": -1.14,
+            "elongation": 3.33,
+            "boundaryGradient": 9.88,
+            "heuristicScore": 0.6007,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 17.64
+          },
+          {
+            "clusterId": 1115,
+            "area": 14,
+            "bbox": [
+              479,
+              208,
+              489,
+              213
+            ],
+            "centroid": [
+              482.79,
+              209.36
+            ],
+            "vvDampingDb": 3.28,
+            "vhDampingDb": 0.06,
+            "elongation": 4.37,
+            "boundaryGradient": 12.61,
+            "heuristicScore": 0.5625,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0436,
+            "centroidDistPx": 16.39
+          },
+          {
+            "clusterId": 2081,
+            "area": 19,
+            "bbox": [
+              156,
+              478,
+              162,
+              487
+            ],
+            "centroid": [
+              158.26,
+              482.32
+            ],
+            "vvDampingDb": 3.43,
+            "vhDampingDb": 0.39,
+            "elongation": 2.06,
+            "boundaryGradient": 10.31,
+            "heuristicScore": 0.5485,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 227.35
+          },
+          {
+            "clusterId": 2002,
+            "area": 29,
+            "bbox": [
+              231,
+              458,
+              238,
+              470
+            ],
+            "centroid": [
+              233.14,
+              462.52
+            ],
+            "vvDampingDb": 3.39,
+            "vhDampingDb": 343.18,
+            "elongation": 2.32,
+            "boundaryGradient": 13.98,
+            "heuristicScore": 0.5366,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": 161.14
+          },
+          {
+            "clusterId": 1311,
+            "area": 12,
+            "bbox": [
+              320,
+              256,
+              327,
+              259
+            ],
+            "centroid": [
+              322.5,
+              256.5
+            ],
+            "vvDampingDb": 2.15,
+            "vhDampingDb": -0.52,
+            "elongation": 2.88,
+            "boundaryGradient": 9.68,
+            "heuristicScore": 0.5354,
+            "overlapsGt": true,
+            "bboxIoUWithGt": 0.0052,
+            "centroidDistPx": 12.04
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 0,
+        "oilRegionsCount": 0,
+        "overlapsGt": false,
+        "bestBboxIoU": 0.0,
+        "bestCentroidDistPx": null,
+        "classDistribution": {
+          "Sea Surface": 254773,
+          "Oil Spill": 0,
+          "Look-alike": 4157,
+          "Ship": 15,
+          "Land": 3199
+        },
+        "executionTimeMs": 45.51
+      }
+    },
+    {
+      "sceneId": "nw-0001",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "gtBoundingBoxes": [],
+      "classical": {
+        "totalClustersBeforeFilter": 44,
+        "retainedCandidates": 33,
+        "highestScore": 0.864,
+        "overlapsGt": false,
+        "bestBboxIoU": 0.0,
+        "bestCentroidDistPx": null,
+        "executionTimeMs": 89.17,
+        "topCandidates": [
+          {
+            "clusterId": 585,
+            "area": 14,
+            "bbox": [
+              111,
+              102,
+              114,
+              111
+            ],
+            "centroid": [
+              111.79,
+              105.14
+            ],
+            "vvDampingDb": 718.75,
+            "vhDampingDb": 711.15,
+            "elongation": 4.59,
+            "boundaryGradient": 18380.53,
+            "heuristicScore": 0.864,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 2506,
+            "area": 12,
+            "bbox": [
+              315,
+              438,
+              323,
+              442
+            ],
+            "centroid": [
+              318.33,
+              439.83
+            ],
+            "vvDampingDb": 6.84,
+            "vhDampingDb": 3.38,
+            "elongation": 2.82,
+            "boundaryGradient": 1294.25,
+            "heuristicScore": 0.8375,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 2523,
+            "area": 29,
+            "bbox": [
+              256,
+              442,
+              270,
+              450
+            ],
+            "centroid": [
+              261.72,
+              445.17
+            ],
+            "vvDampingDb": 692.87,
+            "vhDampingDb": 2060.27,
+            "elongation": 2.46,
+            "boundaryGradient": 9050.37,
+            "heuristicScore": 0.7757,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 2542,
+            "area": 25,
+            "bbox": [
+              304,
+              447,
+              309,
+              461
+            ],
+            "centroid": [
+              306.16,
+              453.6
+            ],
+            "vvDampingDb": 804.05,
+            "vhDampingDb": 3588.02,
+            "elongation": 3.98,
+            "boundaryGradient": 16225.75,
+            "heuristicScore": 0.7675,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 2442,
+            "area": 25,
+            "bbox": [
+              250,
+              429,
+              256,
+              440
+            ],
+            "centroid": [
+              252.16,
+              433.24
+            ],
+            "vvDampingDb": 405.37,
+            "vhDampingDb": 1592.79,
+            "elongation": 2.33,
+            "boundaryGradient": 4920.54,
+            "heuristicScore": 0.7504,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 0,
+        "oilRegionsCount": 0,
+        "overlapsGt": false,
+        "bestBboxIoU": 0.0,
+        "bestCentroidDistPx": null,
+        "classDistribution": {
+          "Sea Surface": 260282,
+          "Oil Spill": 0,
+          "Look-alike": 1862,
+          "Ship": 0,
+          "Land": 0
+        },
+        "executionTimeMs": 44.73
+      }
+    },
+    {
+      "sceneId": "nw-0002",
+      "type": "look-alike",
+      "category": "nw (no_oil/water)",
+      "gtBoundingBoxes": [],
+      "classical": {
+        "totalClustersBeforeFilter": 33,
+        "retainedCandidates": 33,
+        "highestScore": 0.88,
+        "overlapsGt": false,
+        "bestBboxIoU": 0.0,
+        "bestCentroidDistPx": null,
+        "executionTimeMs": 69.09,
+        "topCandidates": [
+          {
+            "clusterId": 607,
+            "area": 15,
+            "bbox": [
+              201,
+              84,
+              204,
+              96
+            ],
+            "centroid": [
+              201.87,
+              89.4
+            ],
+            "vvDampingDb": 1335.43,
+            "vhDampingDb": 1328.28,
+            "elongation": 7.08,
+            "boundaryGradient": 23107.62,
+            "heuristicScore": 0.88,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 306,
+            "area": 17,
+            "bbox": [
+              51,
+              45,
+              58,
+              53
+            ],
+            "centroid": [
+              53.94,
+              48.24
+            ],
+            "vvDampingDb": 1767.15,
+            "vhDampingDb": 586.58,
+            "elongation": 2.24,
+            "boundaryGradient": 14204.37,
+            "heuristicScore": 0.86,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 401,
+            "area": 10,
+            "bbox": [
+              211,
+              56,
+              219,
+              60
+            ],
+            "centroid": [
+              214.3,
+              57.4
+            ],
+            "vvDampingDb": 1998.55,
+            "vhDampingDb": 1992.78,
+            "elongation": 3.29,
+            "boundaryGradient": 31642.14,
+            "heuristicScore": 0.86,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 2116,
+            "area": 10,
+            "bbox": [
+              281,
+              314,
+              288,
+              320
+            ],
+            "centroid": [
+              284.6,
+              317.2
+            ],
+            "vvDampingDb": 1999.1,
+            "vhDampingDb": 995.84,
+            "elongation": 3.0,
+            "boundaryGradient": 18506.24,
+            "heuristicScore": 0.86,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          },
+          {
+            "clusterId": 1054,
+            "area": 13,
+            "bbox": [
+              38,
+              152,
+              45,
+              159
+            ],
+            "centroid": [
+              41.08,
+              154.69
+            ],
+            "vvDampingDb": 3075.02,
+            "vhDampingDb": 3066.41,
+            "elongation": 1.82,
+            "boundaryGradient": 20469.89,
+            "heuristicScore": 0.7955,
+            "overlapsGt": false,
+            "bboxIoUWithGt": 0.0,
+            "centroidDistPx": null
+          }
+        ]
+      },
+      "poseatsea": {
+        "oilPixels": 0,
+        "oilRegionsCount": 0,
+        "overlapsGt": false,
+        "bestBboxIoU": 0.0,
+        "bestCentroidDistPx": null,
+        "classDistribution": {
+          "Sea Surface": 260509,
+          "Oil Spill": 0,
+          "Look-alike": 1635,
+          "Ship": 0,
+          "Land": 0
+        },
+        "executionTimeMs": 44.83
+      }
+    }
+  ]
+}

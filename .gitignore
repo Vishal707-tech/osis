@@ -1,0 +1,34 @@
+node_modules/
+.env
+.env.*
+dist/
+.output/
+.nitro/
+.vercel/
+*.tif
+
+
+*.pth
+models/
+
+# Scientific / environmental data (Phase 4A) — NEVER commit these
+*.nc
+*.nc4
+*.grib
+*.grib2
+*.zarr
+*.h5
+*.hdf5
+*.tmp_era5*
+backend/scripts/__pycache__/
+__pycache__/
+*.pyc
+
+# Local generated incident archives are not source fixtures.
+backend/data/incidents/
+frontend/.osis-*-test-*/
+!**/.env.example
+
+backend/data/*.tiff
+
+backend/data/*.tiff

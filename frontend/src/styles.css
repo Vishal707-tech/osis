@@ -1,0 +1,328 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.375rem;
+
+  /* ── Core surfaces ── */
+  --background: #070B10;
+  --header: #090E15;
+  --foreground: #F2F6F8;
+  --card: #0D141C;
+  --card-foreground: #F2F6F8;
+  --popover: #0D141C;
+  --popover-foreground: #F2F6F8;
+
+  /* ── Interactive / primary ── */
+  --primary: #19B5E6;
+  --primary-foreground: #070B10;
+
+  /* ── Surfaces ── */
+  --secondary: #111A24;
+  --secondary-foreground: #E8EDF2;
+  --muted: #111A24;
+  --muted-foreground: #8B9AA7;
+  --accent: #162230;
+  --accent-foreground: #F2F6F8;
+
+  /* ── Semantic ── */
+  --destructive: #FF4D6D;
+  --destructive-foreground: #F2F6F8;
+
+  /* ── Borders & inputs ── */
+  --border: #1D2A36;
+  --input: #1D2A36;
+  --ring: #19B5E6;
+
+  /* ── Accent palette ── */
+  --accent-blue: #19B5E6;
+  --accent-cyan: #19B5E6;
+  --accent-emerald: #2ECF8B;
+  --accent-amber: #F5B82E;
+  --accent-rose: #FF4D6D;
+
+  /* ── Map palette ── */
+  --map-bg: #060A0F;
+  --map-grid: rgba(29, 42, 54, 0.45);
+  --map-swell: rgba(25, 181, 230, 0.06);
+  --map-label: #B0BEC5;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    /* Modern system sans-serif stack — no external dependency */
+    font-family:
+      "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+      Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+  /* Monospace for technical data: coordinates, timestamps, IDs */
+  code,
+  kbd,
+  samp,
+  pre,
+  .font-mono {
+    font-family:
+      "JetBrains Mono", "Cascadia Code", "Fira Code",
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+}
+
+/* ─── Subtle technical grid background ─── */
+.om-stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(29, 42, 54, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(29, 42, 54, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.4;
+}
+
+/* ─── Mechanical swell line for map ─── */
+.om-swell {
+  animation: om-swell-move 30s ease-in-out infinite alternate;
+}
+@keyframes om-swell-move {
+  from { transform: translateX(-8px); }
+  to   { transform: translateX(8px); }
+}
+
+/* ─── Restrained dot pulse (no glow) ─── */
+.om-pulse-dot {
+  animation: om-blink 2.4s ease-in-out infinite;
+}
+@keyframes om-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+/* ─── Transition animations ─── */
+.om-fade {
+  animation: om-fade-k 0.15s ease-out;
+}
+@keyframes om-fade-k {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.om-rise {
+  animation: om-rise-k 0.18s ease-out;
+}
+@keyframes om-rise-k {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.om-slide-up {
+  animation: om-slide-up-k 0.22s ease-out both;
+}
+@keyframes om-slide-up-k {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ─── Technical slider ─── */
+input[type="range"].om-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-amber) var(--fill, 0%),
+    var(--secondary) var(--fill, 0%)
+  );
+  outline: none;
+}
+input[type="range"].om-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 3px;
+  background: var(--accent-amber);
+  border: 1px solid var(--border);
+  cursor: grab;
+}
+input[type="range"].om-range::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 3px;
+  background: var(--accent-amber);
+  border: 1px solid var(--border);
+  cursor: grab;
+}
+
+/* ─── Dense technical scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   Leaflet Base & Dark Maritime Cartography Theme
+   ========================================================================== */
+
+.osis-leaflet-map {
+  background-color: var(--map-bg) !important;
+  font-family: inherit;
+  z-index: 1;
+}
+
+/* Controlled dark nautical filter for standard OpenStreetMap tiles */
+.osis-leaflet-map .leaflet-tile-pane {
+  filter: brightness(0.65) invert(1) contrast(2.4) hue-rotate(198deg) saturate(0.32);
+}
+
+/* Keep vector overlays in original crisp colors */
+.osis-leaflet-map .leaflet-overlay-pane,
+.osis-leaflet-map .leaflet-marker-pane,
+.osis-leaflet-map .leaflet-popup-pane,
+.osis-leaflet-map .leaflet-tooltip-pane {
+  filter: none !important;
+}
+
+/* Custom dark tactical popups */
+.osis-leaflet-map .leaflet-popup-content-wrapper,
+.osis-leaflet-map .leaflet-popup-tip {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+.osis-leaflet-map .leaflet-popup-content {
+  margin: 10px 14px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+
+/* Custom dark tactical tooltips */
+.osis-leaflet-map .leaflet-tooltip {
+  background: var(--card) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 11px !important;
+  padding: 4px 8px !important;
+}
+
+.osis-leaflet-map .leaflet-tooltip-top:before {
+  border-top-color: var(--border) !important;
+}
+.osis-leaflet-map .leaflet-tooltip-bottom:before {
+  border-bottom-color: var(--border) !important;
+}
+.osis-leaflet-map .leaflet-tooltip-left:before {
+  border-left-color: var(--border) !important;
+}
+.osis-leaflet-map .leaflet-tooltip-right:before {
+  border-right-color: var(--border) !important;
+}
+
+/* Subtle dark attribution control */
+.osis-leaflet-map .leaflet-control-attribution {
+  background: rgba(7, 11, 16, 0.85) !important;
+  color: var(--muted-foreground) !important;
+  font-family: ui-monospace, SFMono-Regular, monospace !important;
+  font-size: 9px !important;
+  border-top-left-radius: 4px;
+  padding: 2px 6px !important;
+}
+.osis-leaflet-map .leaflet-control-attribution a {
+  color: var(--accent-blue) !important;
+  text-decoration: none;
+}
+.osis-leaflet-map .leaflet-control-attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Tactical Pulse Animation for Markers */
+@keyframes osis-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.osis-marker-pulse {
+  animation: osis-pulse 2.2s infinite ease-out;
+  transform-origin: center;
+}

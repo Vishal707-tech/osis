@@ -1,0 +1,340 @@
+GROUP: S1D_IW_GRDH_1SDV_20260702T142203_20260702T142232_003496_0062F7_DBD7_COG.SAFE
+Classification: B. REAL/REPLAY INCIDENTS
+Number of incident rows: 2
+  Row 1:
+    UUID: a66df71d-7d4d-46dc-bdc7-f018db82eac5
+    Detected At: Wed Oct 07 2026 23:56:52 GMT+0530 (India Standard Time)
+    Image At: Thu Jul 02 2026 19:52:03 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 2:
+    UUID: 13163867-0282-4978-a282-03a1df164390
+    Detected At: Thu Oct 08 2026 00:09:05 GMT+0530 (India Standard Time)
+    Image At: Thu Jul 02 2026 19:52:03 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: true
+    PS Status: completed
+  -> Canonical recommendation: 13163867-0282-4978-a282-03a1df164390
+
+GROUP: S1D_IW_GRDH_1SDV_20261005T011017_20261005T011042_004873_0092A1_0488_COG.SAFE
+Classification: B. REAL/REPLAY INCIDENTS
+Number of incident rows: 9
+  Row 1:
+    UUID: 39aedc64-c106-4ed3-a858-323ecdfe8fd2
+    Detected At: Wed Oct 07 2026 10:26:21 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 2:
+    UUID: bf195820-c10c-4d13-8326-c710fb8099c6
+    Detected At: Wed Oct 07 2026 10:57:58 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 3:
+    UUID: c011873f-b0b8-43e9-9958-c949a4d8a99b
+    Detected At: Wed Oct 07 2026 11:11:11 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: ANALYSIS_INCONCLUSIVE
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 4:
+    UUID: bc0de50c-f96c-40f8-8822-51c771c45296
+    Detected At: Wed Oct 07 2026 11:20:15 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 5:
+    UUID: c8e6579b-95e1-4030-b1c8-39554ea6792b
+    Detected At: Wed Oct 07 2026 22:11:37 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 6:
+    UUID: 66ac8717-2dce-45b7-9031-7878ba0d646c
+    Detected At: Wed Oct 07 2026 22:29:09 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 7:
+    UUID: 0554b040-152c-4e98-b1cb-498b8fad8109
+    Detected At: Wed Oct 07 2026 22:35:15 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 8:
+    UUID: ee4f07c5-0df7-4005-9277-d098337ad9f2
+    Detected At: Wed Oct 07 2026 22:42:42 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: completed
+  Row 9:
+    UUID: a2fc5a4b-b340-440a-9a8a-52a2ba760827
+    Detected At: Wed Oct 07 2026 22:53:55 GMT+0530 (India Standard Time)
+    Image At: Mon Oct 05 2026 06:40:17 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: true
+    PS Status: completed
+  -> Canonical recommendation: a2fc5a4b-b340-440a-9a8a-52a2ba760827
+
+GROUP: test_res_cleanup
+Classification: A. TEST FIXTURES
+Number of incident rows: 4
+  Row 1:
+    UUID: aedfe84b-d87c-4539-b90e-5e8d0b682c7e
+    Detected At: Thu Oct 08 2026 20:09:21 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:09:14 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  Row 2:
+    UUID: 784ff4f7-6d37-4e27-9b44-c8986c65f5d6
+    Detected At: Thu Oct 08 2026 20:09:51 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:09:46 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  Row 3:
+    UUID: 0a839b5d-1233-4a73-9062-1ee849b4b9b4
+    Detected At: Thu Oct 08 2026 20:10:30 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:10:26 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  Row 4:
+    UUID: 6bd75e97-a59d-48cc-b267-dd51f2c4a548
+    Detected At: Thu Oct 08 2026 20:10:49 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:10:43 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  -> Canonical recommendation: None (Orphaned)
+
+GROUP: test_res_w_1
+Classification: A. TEST FIXTURES
+Number of incident rows: 2
+  Row 1:
+    UUID: 1a714881-4c58-438c-bb6b-28e80826f7b2
+    Detected At: Thu Oct 08 2026 20:10:24 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:10:19 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  Row 2:
+    UUID: 553f0312-16d0-4cee-bab3-83e6fcb5cb50
+    Detected At: Thu Oct 08 2026 20:10:42 GMT+0530 (India Standard Time)
+    Image At: Thu Oct 08 2026 20:10:36 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  -> Canonical recommendation: None (Orphaned)
+
+GROUP: test_s1a_karnataka_day3_ml_001
+Classification: A. TEST FIXTURES
+Number of incident rows: 12
+  Row 1:
+    UUID: 771319cf-6885-4e3c-b337-10ad27330618
+    Detected At: Sun Oct 04 2026 15:16:52 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 2:
+    UUID: bc18ff51-f6e7-4b76-8df5-96fc24cd6211
+    Detected At: Sun Oct 04 2026 15:18:19 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 3:
+    UUID: fef8634a-64cb-4a32-90c0-2616cc8d7f1d
+    Detected At: Sun Oct 04 2026 15:18:19 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 4:
+    UUID: c699fb09-9820-4f2d-855e-f7a01b1ed7c0
+    Detected At: Sun Oct 04 2026 15:27:50 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 5:
+    UUID: 575b883b-c12b-49cc-9bbb-d23eda97e552
+    Detected At: Mon Oct 05 2026 18:35:13 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 6:
+    UUID: 78b0ac8f-3da9-4145-92d8-b8233e431b23
+    Detected At: Mon Oct 05 2026 18:35:52 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 7:
+    UUID: 253bf814-c476-4508-a1eb-08e1d491d7b8
+    Detected At: Mon Oct 05 2026 22:32:10 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 8:
+    UUID: c49df615-0a9a-4e21-b629-2146cc1bd56e
+    Detected At: Mon Oct 05 2026 22:34:56 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 9:
+    UUID: f88e42b3-6ed6-4ae2-8fec-05049faa10ff
+    Detected At: Mon Oct 05 2026 22:37:06 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 10:
+    UUID: 643f90cd-a642-4ede-b6f8-189f3bcf7076
+    Detected At: Mon Oct 05 2026 23:02:40 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 11:
+    UUID: 2ea748b2-9329-4b0a-8874-3a7921db9427
+    Detected At: Tue Oct 06 2026 18:18:45 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  Row 12:
+    UUID: 4fc4cfa0-ae2e-4f8f-8831-6b6eb4af2b8d
+    Detected At: Tue Oct 06 2026 18:52:10 GMT+0530 (India Standard Time)
+    Image At: Wed Jun 19 2024 06:18:37 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: SPILL_DETECTED
+    Report Source: cdse_sentinel1
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: failed
+  -> Canonical recommendation: None (Orphaned)
+
+GROUP: test-amsterdam
+Classification: A. TEST FIXTURES
+Number of incident rows: 2
+  Row 1:
+    UUID: c0ee790e-66c2-4644-bb41-3c7f12dfed18
+    Detected At: Wed Oct 07 2026 23:43:47 GMT+0530 (India Standard Time)
+    Image At: Wed Oct 07 2026 23:43:44 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: null
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  Row 2:
+    UUID: b1c25218-a612-431c-a1da-d16888cd2992
+    Detected At: Wed Oct 07 2026 23:44:06 GMT+0530 (India Standard Time)
+    Image At: Wed Oct 07 2026 23:44:02 GMT+0530 (India Standard Time)
+    Report Status: partial
+    Detector Outcome: null
+    Report Source: null
+    Has: Detect=true Char=true Env=true Hindcast=true Origin=true Forecast=true AIS=true Attr=true
+    PS Incident ID Match: false
+    PS Status: null
+  -> Canonical recommendation: None (Orphaned)
+

@@ -1,0 +1,7 @@
+Scene_ID,Type,Category,Classical_Total_Clusters,Classical_Retained_Candidates,Classical_Highest_Score,Classical_Overlaps_GT,Classical_Best_BBox_IoU,Classical_Centroid_Dist_Px,POSEatSea_Oil_Pixels,POSEatSea_Oil_Regions,POSEatSea_Overlaps_GT,POSEatSea_Best_BBox_IoU,POSEatSea_Centroid_Dist_Px,POSEatSea_Lookalike_Px,POSEatSea_Land_Px,Classical_Time_ms,POSEatSea_Time_ms
+ow-0002,oil,ow (oil/water),23,9,0.6892,True,0.0313,14.92,236,4,True,0.4605,2.78,0,0,53.21,294.4
+ow-0004,oil,ow (oil/water),23,8,0.7735,True,0.4045,2.7,1779,5,True,0.0108,28.92,31,0,47.21,45.53
+ow-0006,oil,ow (oil/water),32,28,0.8058,True,0.0888,7.81,3924,12,True,0.6481,6.87,220,0,66.61,45.42
+oc-0001,oil,oc (oil/coast),16,8,0.6007,True,0.0436,12.04,0,0,False,0.0,N/A,4157,3199,36.59,45.51
+nw-0001,look-alike,nw (no_oil/water),44,33,0.864,N/A,N/A,N/A,0,0,N/A,N/A,N/A,1862,0,89.17,44.73
+nw-0002,look-alike,nw (no_oil/water),33,33,0.88,N/A,N/A,N/A,0,0,N/A,N/A,N/A,1635,0,69.09,44.83

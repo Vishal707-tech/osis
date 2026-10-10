@@ -1,0 +1,7 @@
+Scene_ID,Type,Category,Status,Oil_Pixels,Oil_Regions,Overlaps_GT,Best_BBox_IoU,Centroid_Dist_Px,Lookalike_Pixels,Land_Pixels,Ship_Pixels,Inference_Time_ms,Notes
+ow-0002,oil,ow (oil/water),POSITIVE DETECTION,236,4,True,0.4604904632152589,2.78,0,0,697,44.28,Oil slick detected (IoU=0.4605)
+ow-0004,oil,ow (oil/water),POSITIVE DETECTION,1779,5,True,0.0107664701358626,28.92,31,0,0,44.8,Oil slick detected (IoU=0.0108)
+ow-0006,oil,ow (oil/water),POSITIVE DETECTION,3924,12,True,0.6481481481481481,6.87,220,0,0,46.5,Oil slick detected (IoU=0.6481)
+oc-0001,oil,oc (oil/coast),MISSED DETECTION,0,0,False,0.0,N/A,4157,3199,15,45.36,Coastal oil masked as Look-alike (Class 2) and Land (Class 4)
+nw-0001,look-alike,nw (no_oil/water),CORRECT REJECTION,0,0,N/A,N/A,N/A,1862,0,0,44.59,"Clean suppression (0 oil px, 1862 lookalike px)"
+nw-0002,look-alike,nw (no_oil/water),CORRECT REJECTION,0,0,N/A,N/A,N/A,1635,0,0,44.52,"Clean suppression (0 oil px, 1635 lookalike px)"

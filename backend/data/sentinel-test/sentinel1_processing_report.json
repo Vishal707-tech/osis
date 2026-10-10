@@ -1,0 +1,114 @@
+{
+  "pipeline": "Sentinel-1 SAR Preprocessing and Visualization",
+  "processedAt": "2026-09-07T11:08:41.661Z",
+  "files": {
+    "inputTiff": {
+      "path": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\sentinel1_vv_20240619.tif",
+      "relativePath": "backend/data/sentinel-test/sentinel1_vv_20240619.tif",
+      "sizeBytes": 278004
+    },
+    "previewPng": {
+      "path": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\sentinel1_vv_20240619_preview.png",
+      "relativePath": "backend/data/sentinel-test/sentinel1_vv_20240619_preview.png",
+      "sizeBytes": 65570,
+      "format": "PNG (8-bit grayscale)",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    "processedDbTiff": {
+      "path": "C:\\Users\\VINEET SINGH\\OneDrive\\Desktop\\OSIS\\SIH-PS26143 - Copy\\backend\\data\\sentinel-test\\sentinel1_vv_20240619_db.tif",
+      "relativePath": "backend/data/sentinel-test/sentinel1_vv_20240619_db.tif",
+      "sizeBytes": 262764,
+      "format": "GeoTIFF (Big-Endian, Deflate)",
+      "dimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "crs": "EPSG:4326 / WGS84 (OGC CRS84)",
+      "boundingBox": [
+        74.4,
+        13.98,
+        74.48,
+        14.06
+      ],
+      "noDataValue": -9999
+    }
+  },
+  "geospatial": {
+    "crs": "EPSG:4326 / WGS84 (OGC CRS84)",
+    "boundingBox": [
+      74.4,
+      13.98,
+      74.48,
+      14.06
+    ],
+    "pixelScale": {
+      "xDeg": 0.00015624999999999667,
+      "yDeg": 0.00015625000000000014
+    },
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "polarization": "VV"
+  },
+  "statistics": {
+    "totalPixels": 262144,
+    "validPixels": 69945,
+    "invalidPixels": 192199,
+    "validPercentage": 26.68,
+    "linearBackscatter": {
+      "min": 5.973359975541825e-7,
+      "max": 0.5797885060310364,
+      "mean": 0.007812413533791164,
+      "stdDev": 0.010009577678589659,
+      "representation": "Linear intensity (calibrated gamma0)"
+    },
+    "decibelBackscatter": {
+      "formula": "10 * log10(linear_value)",
+      "minDb": -62.2378,
+      "maxDb": -2.3673,
+      "meanDb": -22.9077,
+      "stdDevDb": 4.5929,
+      "percentiles": {
+        "p1": -38.062,
+        "p2": -35.324,
+        "p5": -31.473,
+        "p50": -22.101,
+        "p95": -17.226,
+        "p98": -16.205,
+        "p99": -15.443
+      }
+    }
+  },
+  "preprocessingOperations": [
+    {
+      "step": 1,
+      "name": "NoData & Swath Edge Masking",
+      "description": "Zero, negative, and non-finite pixels outside the orbital swath were isolated and assigned standard GIS NoData (-9999.0)."
+    },
+    {
+      "step": 2,
+      "name": "Radiometric Conversion to Decibels",
+      "description": "Linear power values converted to logarithmic radar backscatter scale using 10 * log10(intensity)."
+    },
+    {
+      "step": 3,
+      "name": "Robust Dynamic Range Percentile Clipping",
+      "description": "Backscatter dynamic range clipped between 2nd percentile (-35.32 dB) and 98th percentile (-16.21 dB) to remove speckle outliers."
+    },
+    {
+      "step": 4,
+      "name": "Mild 3x3 Spatial Speckle Filtering",
+      "description": "Adaptive 3x3 median filter applied to suppress granular SAR speckle while preserving sharp radar gradients and boundaries."
+    },
+    {
+      "step": 5,
+      "name": "Linear Contrast Stretch to 8-bit Grayscale",
+      "description": "Mapped the clipped dB range linearly to [0, 255] for standard display."
+    }
+  ],
+  "scientificNotice": "This preprocessing is radiometric calibration and visualization only. Dark features in SAR can be caused by low wind, biogenic films, or surface slicks. No automatic oil-spill detection or attribution is asserted."
+}
